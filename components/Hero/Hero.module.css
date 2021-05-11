@@ -1,0 +1,30 @@
+.hero {
+  height: 600px;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.9)),
+    url(../../public/Hero-image.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__text {
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  text-shadow: 2px 2px 4px black;
+}
+
+.hero__btn {
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .hero {
+    height: 700px;
+    background-position-x: -300px;
+  }
+}
