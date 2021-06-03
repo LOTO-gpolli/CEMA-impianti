@@ -1,4 +1,4 @@
-.info {
+/* .info {
   background-color: white;
 }
 
@@ -131,5 +131,40 @@
     line-height: 1.8rem;
     padding: 10px 20px;
     text-align: center;
+  }
+} */
+
+.header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  padding: 0 2rem;
+}
+
+.header__navigation-list {
+  display: flex;
+  text-transform: uppercase;
+  line-height: 1;
+  list-style-type: none;
+}
+
+.header__navigation-item {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.header__button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
+@media (min-width: 768px) {
+  .header__button {
+    position: relative;
+    bottom: 0;
+    right: 0;
   }
 }
