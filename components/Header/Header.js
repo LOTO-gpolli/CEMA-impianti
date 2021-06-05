@@ -3,13 +3,14 @@ import Image from "next/image";
 import { Button } from "../Button/Button";
 /* Styles */
 import styles from "./Header.module.css";
-
+/* FontAwesome */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 // /* Styles */
 // import styles from "./Header.module.css";
 // import { printHello } from "../../helpers/utils";
 // import Link from "next/link";
 // /*Fontawesome*/
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 // import {
 //   faPhone,
 //   faBars,
@@ -162,6 +163,9 @@ const Header = () => {
           customClassText: `${styles["header__button-text"]}`
         }}
       />
+      <div className={`${styles["header__toggle-menu"]}`}>
+        <FontAwesomeIcon icon={faBars} size="lg" />
+      </div>
     </header>
   );
 };
