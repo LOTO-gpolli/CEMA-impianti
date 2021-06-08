@@ -167,6 +167,7 @@
   border-radius: 32px;
   background: linear-gradient(-30deg, green, rgb(123, 231, 123));
   cursor: pointer;
+  z-index: 1;
 }
 
 .header__button-text {
@@ -178,15 +179,15 @@
 }
 
 .mobile-menu {
-  /* display: block;
-  visibility: hidden; */
+  display: block;
+  /* visibility: hidden; */
   color: white;
   text-align: center;
   /* font-size: 2rem; */
   line-height: 3rem;
   position: relative;
-  /* z-index: 1;
-  overflow: hidden; */
+  /* z-index: 1; */
+  overflow: hidden;
   box-shadow: 0px 5px 5px -5px #303030;
   /* animation-name: exit;
   animation-duration: 0.3s;

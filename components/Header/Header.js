@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Image from "next/image";
 /* Components */
@@ -8,7 +8,6 @@ import styles from "./Header.module.css";
 /* FontAwesome */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import {
-  faBars,
   faBriefcase,
   faEnvelopeOpenText,
   faImages,
@@ -16,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Hamburger from "hamburger-react";
+
 // /* Styles */
 // import styles from "./Header.module.css";
 // import { printHello } from "../../helpers/utils";
