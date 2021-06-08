@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 /* Components */
 import { Button } from "../Button/Button";
@@ -5,7 +7,15 @@ import { Button } from "../Button/Button";
 import styles from "./Header.module.css";
 /* FontAwesome */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faBriefcase,
+  faEnvelopeOpenText,
+  faImages,
+  faUserFriends
+} from "@fortawesome/free-solid-svg-icons";
+
+import Hamburger from "hamburger-react";
 // /* Styles */
 // import styles from "./Header.module.css";
 // import { printHello } from "../../helpers/utils";
@@ -25,6 +35,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 // import { Bounce } from "react-reveal";
 
 const Header = () => {
+  const [isOpen, setOpen] = useState(false);
   //   printHello();
 
   //   const [menuOpen, setMenuOpen] = useState(false);
@@ -140,33 +151,71 @@ const Header = () => {
   // };
 
   return (
-    <header className={`${styles["header"]}`}>
-      <Image
-        className={`${styles["header__logo"]}`}
-        src="/images/alarm.png"
-        width={50}
-        height={50}
-      />
-      <nav className={`${styles["header__navigation"]}`}>
-        <ul className={`${styles["header__navigation-list"]}`}>
-          <li className={`${styles["header__navigation-item"]}`}>servizi</li>
-          <li className={`${styles["header__navigation-item"]}`}>chi siamo</li>
-          <li className={`${styles["header__navigation-item"]}`}>gallery</li>
-          <li className={`${styles["header__navigation-item"]}`}>contatti</li>
-        </ul>
-      </nav>
-      <Button
-        settings={{
-          text: "399 1112233",
-          type: "button",
-          customClass: `${styles["header__button"]}`,
-          customClassText: `${styles["header__button-text"]}`
-        }}
-      />
-      <div className={`${styles["header__toggle-menu"]}`}>
-        <FontAwesomeIcon icon={faBars} size="lg" />
-      </div>
-    </header>
+    <>
+      <header className={`${styles["header"]}`}>
+        <Image
+          className={`${styles["header__logo"]}`}
+          src="/images/logo-cema.png"
+          width={50}
+          height={50}
+        />
+        <nav className={`${styles["header__navigation"]}`}>
+          <ul className={`${styles["header__navigation-list"]}`}>
+            <li className={`${styles["header__navigation-item"]}`}>servizi</li>
+            <li className={`${styles["header__navigation-item"]}`}>chi siamo</li>
+            <li className={`${styles["header__navigation-item"]}`}>gallery</li>
+            <li className={`${styles["header__navigation-item"]}`}>contatti</li>
+          </ul>
+        </nav>
+        <Button
+          settings={{
+            text: "399 1112233",
+            type: "button",
+            customClass: `${styles["header__button"]}`,
+            customClassText: `${styles["header__button-text"]}`
+          }}
+        />
+        <div className={`${styles["header__toggle-menu"]}`}>
+          <Hamburger toggled={isOpen} toggle={setOpen} color="cadetblue" />
+          {/* <FontAwesomeIcon icon={faBars} size="lg" /> */}
+        </div>
+      </header>
+      <ul
+        className={`${styles["mobile-menu"]} ${
+          isOpen
+            ? `${styles["mobile-menu--is-open"]}`
+            : `${styles["mobile-menu--is-close"]}`
+        } `}
+      >
+        <li className={`${styles["mobile__navigation-item"]}`}>
+          <div>
+            <FontAwesomeIcon icon={faBriefcase} />
+            <a> Servizi</a>
+          </div>
+        </li>
+
+        <li className={`${styles["mobile__navigation-item"]}`}>
+          <div>
+            <FontAwesomeIcon icon={faUserFriends} />
+            <a> Chi Siamo</a>
+          </div>
+        </li>
+
+        <li className={`${styles["mobile__navigation-item"]}`}>
+          <div>
+            <FontAwesomeIcon icon={faImages} />
+            <a> Gallery</a>
+          </div>
+        </li>
+
+        <li className={`${styles["mobile__navigation-item"]}`}>
+          <div>
+            <FontAwesomeIcon icon={faEnvelopeOpenText} />
+            <a> Contatti</a>
+          </div>
+        </li>
+      </ul>
+    </>
   );
 };
 
