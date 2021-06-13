@@ -1,0 +1,23 @@
+.footer {
+  width: 100vw;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.footer__company-info {
+  width: 100vw;
+  padding: 0.5rem 10rem;
+  background-color: #3d3d3d;
+}
+
+.footer__copyright {
+  width: 100vw;
+  padding: 0.5rem 0;
+  background-color: #000;
+  font-size: 12px;
+  text-align: center;
+}
