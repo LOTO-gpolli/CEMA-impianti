@@ -11,7 +11,8 @@ import {
   faBriefcase,
   faEnvelopeOpenText,
   faImages,
-  faUserFriends
+  faUserFriends,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 
 import Hamburger from "hamburger-react";
@@ -167,6 +168,7 @@ const Header = () => {
             <li className={`${styles["header__navigation-item"]}`}>contatti</li>
           </ul>
         </nav>
+
         <Button
           settings={{
             text: "399 1112233",
