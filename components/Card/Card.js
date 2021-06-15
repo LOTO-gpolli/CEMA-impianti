@@ -5,20 +5,18 @@ const Card = ({
   settings = {
     src: "",
     alt: "",
-    width: "",
-    height: "",
     title: "",
     text: ""
   }
 }) => {
-  const { src, alt, width, height, title, text } = settings;
+  const { src, alt, title, text } = settings;
 
   return (
     <>
       <div className={`${styles["card__container"]}`}>
-        <Image src={src} alt={alt} width={width} height={height} />
-        <h2>{title}</h2>
-        <p>{text}</p>
+        <Image src={src} alt={alt} width={50} height={50} />
+        <h2 className={styles["card__title"]}>{title}</h2>
+        <p className={styles["card__subtitle"]}>{text}</p>
       </div>
     </>
   );

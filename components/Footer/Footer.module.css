@@ -1,17 +1,22 @@
 .footer {
-  width: 100vw;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 4em;
+  row-gap: 2em;
+  color: #ccc;
+  padding: 30px;
+  background-color: #303030;
 }
 
-.footer__company-info {
-  width: 100vw;
-  padding: 0.5rem 10rem;
-  background-color: #3d3d3d;
+/* .footer__company-social,
+.footer__privacy-cookie {
+  justify-self: flex-start;
+} */
+
+.footer__social-icon {
+  margin-left: 1rem;
 }
 
 .footer__copyright {
@@ -20,4 +25,12 @@
   background-color: #000;
   font-size: 12px;
   text-align: center;
+  color: #aaa;
+}
+
+@media screen and (min-width: 962px) {
+  .footer__company-social,
+  .footer__privacy-cookie {
+    justify-self: flex-end;
+  }
 }

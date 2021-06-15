@@ -11,8 +11,7 @@ import {
   faBriefcase,
   faEnvelopeOpenText,
   faImages,
-  faUserFriends,
-  faArrowDown
+  faUserFriends
 } from "@fortawesome/free-solid-svg-icons";
 
 import Hamburger from "hamburger-react";
@@ -154,16 +153,22 @@ const Header = () => {
   return (
     <>
       <header className={`${styles["header"]}`}>
-        <Image
-          className={`${styles["header__logo"]}`}
-          src="/images/logo-cema.png"
-          width={50}
-          height={50}
-        />
+        <a href="#">
+          <Image
+            className={`${styles["header__logo"]}`}
+            src="/images/logo-cema.png"
+            width={50}
+            height={50}
+          />
+        </a>
         <nav className={`${styles["header__navigation"]}`}>
           <ul className={`${styles["header__navigation-list"]}`}>
-            <li className={`${styles["header__navigation-item"]}`}>servizi</li>
-            <li className={`${styles["header__navigation-item"]}`}>chi siamo</li>
+            <li className={`${styles["header__navigation-item"]}`}>
+              <a href="#servizi">servizi</a>
+            </li>
+            <li className={`${styles["header__navigation-item"]}`}>
+              <a href="#about">chi siamo</a>
+            </li>
             <li className={`${styles["header__navigation-item"]}`}>gallery</li>
             <li className={`${styles["header__navigation-item"]}`}>contatti</li>
           </ul>
@@ -192,14 +197,20 @@ const Header = () => {
         <li className={`${styles["mobile__navigation-item"]}`}>
           <div>
             <FontAwesomeIcon icon={faBriefcase} />
-            <a> Servizi</a>
+            <a href="#servizi" onClick={() => setOpen(false)}>
+              {" "}
+              Servizi
+            </a>
           </div>
         </li>
 
         <li className={`${styles["mobile__navigation-item"]}`}>
           <div>
             <FontAwesomeIcon icon={faUserFriends} />
-            <a> Chi Siamo</a>
+            <a href="#about" onClick={() => setOpen(false)}>
+              {" "}
+              Chi Siamo
+            </a>
           </div>
         </li>
 

@@ -17,7 +17,9 @@ const Hero = () => {
           </h2>
           <Fade up delay={1600}>
             <button className={`${styles["hero__button"]}`} type="button">
-              <FontAwesomeIcon icon={faArrowDown} /> Scopri di più
+              <a href="#servizi">
+                <FontAwesomeIcon icon={faArrowDown} /> Scopri di più
+              </a>
             </button>
           </Fade>
         </div>
@@ -27,8 +29,8 @@ const Hero = () => {
           <Image
             className={`${styles["hero__image"]}`}
             src="/images/Hero-image-sm.jpg"
-            width={646}
-            height={490}
+            width={484}
+            height={367}
           />
         </div>
       </Flip>

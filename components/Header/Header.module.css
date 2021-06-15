@@ -156,6 +156,7 @@
   padding: 0 1rem;
   cursor: pointer;
   transform: scale(1);
+  text-decoration: none;
 }
 
 .header__navigation-item:hover {
@@ -189,7 +190,7 @@
   color: white;
   text-align: center;
   /* font-size: 2rem; */
-  line-height: 3rem;
+  line-height: 4rem;
   position: fixed;
   z-index: 1;
   overflow: hidden;
@@ -202,9 +203,11 @@
 .mobile-menu--is-open {
   display: block;
   visibility: visible;
-  height: 200px;
+  height: 300px;
   width: 100%;
-  transition: height 0.5s ease-in-out;
+  border-radius: 0px;
+  transition: height 0.5s ease-in-out, width 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out;
   background-color: cadetblue;
 }
 
@@ -212,14 +215,17 @@
   display: block;
   visibility: visible;
   height: 0px;
-  width: 100%;
-  transition: height 0.5s ease-in-out;
+  width: 0px;
+  border-radius: 0 0 300px 0;
+  transition: height 0.5s ease-in-out, width 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out;
   background-color: cadetblue;
 }
 
 .mobile__navigation-item {
   list-style-type: none;
   text-transform: uppercase;
+  font-size: 1.25rem;
 }
 
 @media (min-width: 768px) {

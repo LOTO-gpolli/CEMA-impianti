@@ -51,7 +51,7 @@ const Form = () => {
             type="text"
             name="subject"
             id="yoursubject"
-            placeholder="Inserisci l'oggetto del messaggio."
+            placeholder="Inserisci il motivo della richiesta."
             required
           />
         </p>

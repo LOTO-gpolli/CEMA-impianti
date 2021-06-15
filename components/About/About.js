@@ -4,7 +4,7 @@ import styles from "../About/About.module.css";
 const About = () => {
   return (
     <>
-      <section className={`${styles["about__container"]}`}>
+      <section id="about" className={`${styles["about__container"]}`}>
         <h2>CHI SIAMO</h2>
         <div className={`${styles["about__grid-container"]}`}>
           <p className={`${styles["grid__item1"]}`}>
@@ -28,6 +28,7 @@ const About = () => {
               src="/images/mare.jpg"
               width={600}
               height={400}
+              layout={"responsive"} /*per adattare l'immagine al div*/
             />
           </div>
           <div className={`${styles["grid__item3"]}`}>
@@ -36,6 +37,7 @@ const About = () => {
               src="/images/mare.jpg"
               width={600}
               height={400}
+              layout={"responsive"}
             />
           </div>
 
@@ -53,6 +55,14 @@ const About = () => {
             accusantium consequatur quia! Dolor ipsum magnam reprehenderit repellat a
             illum dolorem.
           </p>
+        </div>
+        <div className={`${styles["about__list"]}`}>
+          <h3>LOREM IPSUM</h3>
+          <ul>
+            <li>Lorem Ipsum</li>
+            <li>Lorem Ipsum</li>
+            <li>Lorem Ipsum</li>
+          </ul>
         </div>
       </section>
     </>
