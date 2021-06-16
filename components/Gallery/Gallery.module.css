@@ -1,15 +1,11 @@
 .gallery__container {
-  padding: 3em 10%;
+  padding: 4em 10% 3em 10%;
   text-align: center;
   background-color: #eee;
-}
-
-.gallery__title {
-  margin-top: -90px;
-  padding-top: 90px;
 }
 
 .gallery__carousel {
   box-shadow: 0 0 5px 5px grey;
   margin: 3em 0 3em 0;
+  z-index: 0;
 }

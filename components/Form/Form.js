@@ -2,7 +2,7 @@ import styles from "../Form/Form.module.css";
 
 const Form = () => {
   return (
-    <div className={`${styles["form__container"]}`}>
+    <div id="contatti" className={`${styles["form__container"]}`}>
       <h2>CONTATTACI</h2>
       <form
         className={`${styles["form"]}`}

@@ -6,31 +6,23 @@
   column-gap: 4em;
   row-gap: 2em;
   color: #ccc;
-  padding: 30px;
+  padding: 3rem;
   background-color: #303030;
 }
 
-/* .footer__company-social,
+.footer__company-info {
+  margin: 0 auto;
+}
+.footer__company-social {
+  margin: 0 auto;
+}
+
 .footer__privacy-cookie {
-  justify-self: flex-start;
-} */
+  margin: 0 auto;
+  cursor: pointer;
+}
 
 .footer__social-icon {
   margin-left: 1rem;
-}
-
-.footer__copyright {
-  width: 100vw;
-  padding: 0.5rem 0;
-  background-color: #000;
-  font-size: 12px;
-  text-align: center;
-  color: #aaa;
-}
-
-@media screen and (min-width: 962px) {
-  .footer__company-social,
-  .footer__privacy-cookie {
-    justify-self: flex-end;
-  }
+  cursor: pointer;
 }

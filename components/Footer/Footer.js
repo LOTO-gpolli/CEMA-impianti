@@ -20,6 +20,7 @@ const Footer = () => {
           </p>
           <p className={styles["footer__company-fiscal-code"]}>P.IVA 03089740132</p>
         </div>
+
         <div className={`${styles["footer__company-social"]}`}>
           <p>
             Contattaci sui social{" "}
@@ -41,16 +42,6 @@ const Footer = () => {
           <a>Cookie Policy</a>
         </div>
       </footer>
-
-      <div className={`${styles["footer__copyright"]} ${styles["copyright"]}`}>
-        <p className={`${styles["copyright__text"]}`}>
-          &copy;
-          <span className={`${styles["copyright__year"]}`}>
-            {new Date().getFullYear()}
-          </span>
-          <span className={`${styles["copyright__author"]}`}>by LOTO Design</span>
-        </p>
-      </div>
     </>
   );
 };

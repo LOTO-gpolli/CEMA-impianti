@@ -5,7 +5,7 @@ import styles from "../CardsList/CardsList.module.css";
 const CardsList = () => {
   return (
     <div id="servizi" className={`${styles["cards-list__container"]}`}>
-      <h2 className={`${styles["CardsList__title"]}`}>I NOSTRI SERVIZI</h2>
+      <h2 className={`${styles["cards-list__title"]}`}>I NOSTRI SERVIZI</h2>
       <div className={`${styles["cards__container"]}`}>
         <Card
           settings={{

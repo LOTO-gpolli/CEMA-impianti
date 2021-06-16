@@ -24,16 +24,18 @@ const Hero = () => {
           </Fade>
         </div>
       </Fade>
-      <Flip top>
-        <div className={`${styles["hero__image-container"]}`}>
-          <Image
-            className={`${styles["hero__image"]}`}
-            src="/images/Hero-image-sm.jpg"
-            width={484}
-            height={367}
-          />
-        </div>
-      </Flip>
+      <Fade>
+        <Flip top>
+          <div className={`${styles["hero__image-container"]}`}>
+            <Image
+              className={`${styles["hero__image"]}`}
+              src="/images/Hero-image-sm.jpg"
+              width={484}
+              height={367}
+            />
+          </div>
+        </Flip>
+      </Fade>
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className={`${styles["gallery__container"]}`}>
+    <section id="gallery" className={`${styles["gallery__container"]}`}>
       <h2 className={`${styles["gallery__title"]}`}>I NOSTRI LAVORI</h2>
       <Carousel
         activeIndex={index}
