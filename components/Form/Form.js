@@ -71,7 +71,11 @@ const Form = () => {
         <p>
           <div>
             <input type="checkbox" id="privacy" name="privacy" required />
-            <label htmlFor="privacy"> Accetto la vostra Privacy Policy</label>
+            <label htmlFor="privacy">
+              <span className={styles["privacy-acceptance"]}>
+                Accetto la vostra Privacy Policy
+              </span>
+            </label>
           </div>
           <br />
           <button className={`${styles["form__submit-button"]}`} type="submit">

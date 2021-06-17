@@ -38,8 +38,7 @@ const Footer = () => {
         </div>
         <div className={`${styles["footer__privacy-cookie"]}`}>
           <a>Privacy Policy</a>
-          <br />
-          <a>Cookie Policy</a>
+          <a> | Cookie Policy</a>
         </div>
       </footer>
     </>

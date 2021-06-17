@@ -72,6 +72,10 @@
   transform: scale(0.9);
 }
 
+.privacy-acceptance {
+  margin-left: 1rem;
+}
+
 @media (min-width: 768px) {
   .form {
     margin: 40px 30%;
