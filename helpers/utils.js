@@ -1,3 +1,5 @@
-export const printHello = () => {
-  console.log('Hello')
+export const capitalizeFirstLetter = (string) => {
+  if (typeof string !== 'string') return string;
+  
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
