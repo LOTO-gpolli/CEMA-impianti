@@ -11,5 +11,13 @@ module.exports = {
     "@storybook/addon-controls",
     "@storybook/addon-viewport"
   ],
-  "presets": [path.resolve(__dirname, './next-preset.js')]
+  "presets": [path.resolve(__dirname, './next-preset.js')],
+  "webpackFinal": async (config, { configType }) => {
+    config.resolve.modules = [
+      path.resolve(__dirname, ".."),
+      "node_modules",
+    ]
+
+    return config;
+  }
 }
