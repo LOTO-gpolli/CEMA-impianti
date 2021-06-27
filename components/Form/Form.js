@@ -1,6 +1,12 @@
+import { useState } from "react";
 import styles from "../Form/Form.module.css";
+import Pulse from "react-reveal/Pulse";
 
 const Form = () => {
+  const [nameActive, setNameActive] = useState(false);
+  const [emailActive, setEmailActive] = useState(false);
+  const [objActive, setObjActive] = useState(false);
+  const [msgActive, setMsgActive] = useState(false);
   return (
     <div id="contatti" className={`${styles["form__container"]}`}>
       <h2>CONTATTACI</h2>
@@ -17,56 +23,64 @@ const Form = () => {
           <label className={`${styles["form__label"]}`} htmlFor="yourname">
             Nome*:{" "}
           </label>{" "}
-          <br />
-          <input
-            className={`${styles["form__input"]}`}
-            type="text"
-            name="name"
-            id="yourname"
-            placeholder="Inserisci il tuo nome e cognome."
-            required
-          />
+          <Pulse spy={nameActive} duration={500} delay={100}>
+            <input
+              className={`${styles["form__input"]}`}
+              type="text"
+              name="name"
+              id="yourname"
+              placeholder="Inserisci il tuo nome e cognome."
+              required
+              onClick={() => (nameActive ? setNameActive(false) : setNameActive(true))}
+            />
+          </Pulse>
         </p>
         <p>
           <label className={`${styles["form__label"]}`} htmlFor="youremail">
             Email*:{" "}
           </label>{" "}
-          <br />
-          <input
-            className={`${styles["form__input"]}`}
-            type="email"
-            name="email"
-            id="youremail"
-            placeholder="Inserisci la tua email."
-            required
-          />
+          <Pulse spy={emailActive} duration={500}>
+            <input
+              className={`${styles["form__input"]}`}
+              type="email"
+              name="email"
+              id="youremail"
+              placeholder="Inserisci la tua email."
+              required
+              onClick={() => (emailActive ? setEmailActive(false) : setEmailActive(true))}
+            />
+          </Pulse>
         </p>
         <p>
           <label className={`${styles["form__label"]}`} htmlFor="yourobject">
             Oggetto*:{" "}
           </label>{" "}
-          <br />
-          <input
-            className={`${styles["form__input"]}`}
-            type="text"
-            name="subject"
-            id="yoursubject"
-            placeholder="Inserisci il motivo della richiesta."
-            required
-          />
+          <Pulse spy={objActive} duration={500}>
+            <input
+              className={`${styles["form__input"]}`}
+              type="text"
+              name="subject"
+              id="yoursubject"
+              placeholder="Inserisci il motivo della richiesta."
+              required
+              onClick={() => (objActive ? setObjActive(false) : setObjActive(true))}
+            />
+          </Pulse>
         </p>
         <p>
           <label className={`${styles["form__label"]}`} htmlFor="yourmessage">
             Messaggio*:{" "}
           </label>{" "}
-          <br />
-          <textarea
-            className={`${styles["form__textarea"]}`}
-            name="message"
-            id="yourmessage"
-            placeholder="Scrivi qui il tuo messaggio."
-            required
-          ></textarea>
+          <Pulse spy={msgActive} duration={500}>
+            <textarea
+              className={`${styles["form__textarea"]}`}
+              name="message"
+              id="yourmessage"
+              placeholder="Scrivi qui il tuo messaggio."
+              required
+              onClick={() => (msgActive ? setMsgActive(false) : setMsgActive(true))}
+            ></textarea>
+          </Pulse>
         </p>
         <p>
           <div>
@@ -77,7 +91,6 @@ const Form = () => {
               </span>
             </label>
           </div>
-          <br />
           <button className={`${styles["form__submit-button"]}`} type="submit">
             Invia
           </button>
