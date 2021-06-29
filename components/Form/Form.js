@@ -10,6 +10,7 @@ const Form = () => {
   return (
     <div id="contatti" className={`${styles["form__container"]}`}>
       <h2>CONTATTACI</h2>
+      <span></span>
       <form
         className={`${styles["form"]}`}
         name="contact"
