@@ -65,16 +65,16 @@ const About = () => {
             </p>
           </Fade>
         </div>
-        <Fade>
-          <div className={`${styles["about__list"]}`}>
-            <h3>LOREM IPSUM</h3>
-            <ul>
+        <div className={`${styles["about__list-container"]}`}>
+          <h3>LOREM IPSUM</h3>
+          <Fade cascade>
+            <ul className={`${styles["about__list"]}`}>
               <li>Lorem Ipsum</li>
               <li>Lorem Ipsum</li>
               <li>Lorem Ipsum</li>
             </ul>
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </section>
     </>
   );

@@ -3,12 +3,14 @@
   padding-top: 3em;
   padding-bottom: 3em;
   font-size: 1.25rem;
-  background-color: rgb(255, 255, 170);
+  /* background-color: rgb(255, 255, 170); */
   color: #303030;
 }
 
 .about__grid-container {
-  margin: 60px 10%;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 5%;
   display: grid; /*per avere i child element a griglia*/
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* ripeti auto-fit con una larghezza minima della colonna di 300px e al max 1fr(action) a tutta larghezza */
@@ -18,7 +20,8 @@
 }
 
 .about__image {
-  box-shadow: 0 0 5px 5px grey;
+  box-shadow: var(--box-shadow);
+  border: 2px solid white;
 }
 
 .grid__item1 {
@@ -28,24 +31,37 @@
 .grid__item2 {
   height: fit-content;
   order: 2;
-  box-shadow: 0 0 5px 5px grey;
+  box-shadow: var(--box-shadow);
+  border: 2px solid white;
+  align-self: center;
 }
 .grid__item3 {
   height: fit-content;
-  box-shadow: 0 0 5px 5px grey;
+  box-shadow: var(--box-shadow);
+  border: 2px solid white;
   order: 4;
+  align-self: center;
 }
 .grid__item4 {
   order: 3;
   margin: auto 0;
 }
 
-.about__list {
-  text-align: start;
-  line-height: 2rem;
-  margin: 1rem 10%;
+.about__list-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 5%;
+  display: grid;
 }
 
+.about__list-container h3 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.about__list {
+  justify-self: left;
+}
 @media (min-width: 768px) {
   .grid__item1 {
     order: 1;
