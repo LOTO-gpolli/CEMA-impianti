@@ -14,7 +14,7 @@ const Card = ({
 
   return (
     <>
-      <Fade up>
+      <Fade bottom>
         <div className={`${styles["card__container"]}`}>
           <Image src={src} alt={alt} width={50} height={50} />
           <h2 className={styles["card__title"]}>{title}</h2>

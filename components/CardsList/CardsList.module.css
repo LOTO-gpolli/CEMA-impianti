@@ -2,6 +2,7 @@
   text-align: center;
   padding-top: 3em;
   padding-bottom: 3em;
+
   background-color: #eee;
   color: #303030;
   font-size: 1.25rem;
@@ -13,12 +14,14 @@
 }
 
 .cards__container {
-  margin: 40px 10%;
-  display: grid; /*per avere i child element a griglia*/
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 5%;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* ripeti auto-fit con una larghezza minima della colonna di 300px e al max 1fr(action) a tutta larghezza */
-  column-gap: 100px;
+  column-gap: 80px;
   row-gap: 2rem;
+  justify-content: center;
 }
 
 .card__container {
