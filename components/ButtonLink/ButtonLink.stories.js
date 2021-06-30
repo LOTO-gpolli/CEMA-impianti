@@ -1,5 +1,5 @@
 import ButtonLink from "./ButtonLink";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   title: "ButtonLink",
@@ -11,8 +11,15 @@ const Template = args => <ButtonLink {...args} />;
 export const Main = Template.bind({});
 Main.args = {
   variant: "main",
-  type: "button",
-  children: "Scopri di più",
+  children: "Scopri",
   href: "/",
   icon: faArrowDown
+};
+
+export const Call = Template.bind({});
+Call.args = {
+  variant: "call",
+  children: "021122333",
+  href: "tel:021122333",
+  icon: faPhone
 };

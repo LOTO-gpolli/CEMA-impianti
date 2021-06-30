@@ -6,10 +6,12 @@ import React from "react";
 function ButtonLink(props) {
   const { variant = "main", children, icon, href } = props;
   return (
-    <a href={href} className={`${styles["button"]} ${styles[variant]}`}>
-      <FontAwesomeIcon icon={icon} size="lg" />
-      {children}
-    </a>
+    <button className={`${styles["button"]} ${styles[variant]}`}>
+      <a href={href}>
+        {children}
+        <FontAwesomeIcon icon={icon} size="lg" className={`${styles["icon"]}`} />
+      </a>
+    </button>
   );
 }
 

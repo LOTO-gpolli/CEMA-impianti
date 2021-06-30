@@ -1,5 +1,5 @@
 .button {
-  background: cadetblue;
+  width: 180px;
   padding: 1rem 1.5rem;
   color: #ffffff !important;
   font-size: 1rem;
@@ -8,13 +8,27 @@
   text-transform: uppercase;
   border: none;
   border-radius: 30px;
+  background: cadetblue;
   outline: none;
   cursor: pointer;
+  box-shadow: 0px 4px 4px grey;
+  transform: scale(1);
+  transition: 0.1s linear;
 }
 
 .button:active,
 .button:focus,
 .button:hover {
   outline: none;
-  transform: scale(1.1);
+  box-shadow: 0px 2px 2px grey;
+  transform: scale(0.99);
+  transition: 0.1s linear;
+}
+
+.call {
+  background-color: green;
+}
+
+.icon {
+  margin-left: 10px;
 }

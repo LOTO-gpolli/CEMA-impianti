@@ -8,8 +8,8 @@ function NewButton(props) {
   return (
     <>
       <button className={`${styles["button"]} ${styles[variant]}`} type={type}>
-        {" "}
-        <FontAwesomeIcon icon={icon} size="lg" /> {children}
+        {children}
+        <FontAwesomeIcon icon={icon} size="lg" className={`${styles["icon"]}`} />
       </button>
     </>
   );
