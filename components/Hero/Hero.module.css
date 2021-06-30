@@ -8,7 +8,7 @@
   justify-content: center;
   background: linear-gradient(135deg, cadetblue, #003);
   color: white;
-  padding: 80px 40px;
+  padding: 80px 35px;
 }
 
 .hero__heading {
@@ -25,7 +25,7 @@
 }
 
 .hero__button {
-  background-color: cadetblue;
+  background-color: red;
   padding: 1rem 1.5rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -38,20 +38,22 @@
   border-radius: 30px;
   outline: none;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .hero__button:active,
 .hero__button:focus,
 .hero__button:hover {
   outline: none;
-  transform: scale(1.1);
+  background-color: darkred;
+  transition: 0.3s ease-in-out;
 }
 
 .hero__image-container {
   display: flex;
   margin: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 3px #303030;
+  /* box-shadow: 0px 0px 10px 3px #303030; */
 }
 
 .hero__image {
