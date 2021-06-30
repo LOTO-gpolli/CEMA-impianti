@@ -1,6 +1,7 @@
 .button {
   width: 180px;
   padding: 1rem 1.5rem;
+  display: block;
   color: #ffffff !important;
   font-size: 1rem;
   font-weight: bold;

@@ -13,7 +13,8 @@ Submit.args = {
   variant: "submit",
   type: "submit",
   children: "Submit",
-  icon: faPaperPlane
+  icon: faPaperPlane,
+  handleClick: () => alert("ciao")
 };
 
 export const Secondary = Template.bind({});
