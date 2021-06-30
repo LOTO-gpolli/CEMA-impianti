@@ -11,10 +11,12 @@ import {
   faBriefcase,
   faEnvelopeOpenText,
   faImages,
+  faPhone,
   faUserFriends
 } from "@fortawesome/free-solid-svg-icons";
 
 import Hamburger from "hamburger-react";
+import { FaPhone, FaPortrait } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -23,12 +25,13 @@ const Header = () => {
     <>
       <header className={`${styles["header"]}`}>
         <a href="#">
-          <Image
+          {/* <Image
             className={`${styles["header__logo"]}`}
             src="/images/logo-cema.png"
             width={50}
             height={50}
-          />
+          /> */}
+          <h1 className={`${styles["header__title"]}`}>CE.MA IMPIANTI</h1>
         </a>
         <nav className={`${styles["header__navigation"]}`}>
           <ul className={`${styles["header__navigation-list"]}`}>
@@ -52,11 +55,12 @@ const Header = () => {
             text: "399 1112233",
             type: "button",
             customClass: `${styles["header__button"]}`,
-            customClassText: `${styles["header__button-text"]}`
+            customClassText: `${styles["header__button-text"]}`,
+            icon: faPhone
           }}
         />
         <div className={`${styles["header__toggle-menu"]}`}>
-          <Hamburger toggled={isOpen} toggle={setOpen} color="cadetblue" />
+          <Hamburger toggled={isOpen} toggle={setOpen} color="red" />
           {/* <FontAwesomeIcon icon={faBars} size="lg" /> */}
         </div>
       </header>
