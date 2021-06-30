@@ -1,0 +1,138 @@
+.gallery__container {
+  width: 100%;
+  height: auto;
+  padding: 3em 5%;
+  font-size: 1.25em;
+  text-align: center;
+  color: #eee;
+  background-color: darkred;
+  overflow: hidden;
+}
+
+.gallery__slider {
+  max-width: 900px;
+  margin: 10px auto;
+  padding-top: 3em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.slider__image-container {
+  position: relative;
+  text-align: center;
+  color: #eee;
+  cursor: pointer;
+}
+
+.slide__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+}
+
+.slide__title {
+  margin-bottom: 10px;
+}
+
+.slide__text--is-paused {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  opacity: 0.3;
+}
+
+.slider__image {
+  position: relative;
+  /* width: 100%;
+  height: auto; */
+  border-radius: 10px;
+  filter: brightness(50%);
+}
+
+.slider__right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: 1.5rem;
+  color: red;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slider__left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 1.5rem;
+  color: red;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slider__slide {
+  opacity: 0;
+  transition-duration: 2s ease;
+}
+
+.slider__slide--is-active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.slider__dots {
+  position: relative;
+  display: inline-flex;
+  padding-bottom: 3em;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.slider__dot {
+  height: 10px;
+  width: 10px;
+  margin: 10px 5px;
+  /* border-radius: 50%; */
+  background-color: #eee;
+  cursor: pointer;
+  transform: scale(1);
+  transition-duration: 1s ease;
+}
+
+.slider__dot--is-active {
+  height: 10px;
+  width: 10px;
+  margin: 10px 5px;
+  /* border-radius: 50%; */
+  background-color: #eee;
+  cursor: pointer;
+  background-color: red;
+  transform: scale(1.5);
+  transition-duration: 1s;
+}
+
+@media screen and (min-width: 768px) {
+  .slide__text {
+    font-size: 1.5rem;
+  }
+
+  .slider__left-arrow,
+  .slider__right-arrow {
+    font-size: 2rem;
+  }
+  /* 
+  .slider__left-arrow {
+    left: 20%;
+  }
+
+  .slider__right-arrow {
+    right: 20%;
+  } */
+}
