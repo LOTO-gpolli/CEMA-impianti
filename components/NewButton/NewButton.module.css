@@ -46,6 +46,17 @@
   outline: none;
 }
 
+.outlined {
+  border: 3px solid red;
+  color: red !important;
+  background-color: white;
+}
+
+.outlined:hover {
+  transform: scale(0.99);
+  transition: 0.1s linear;
+}
+
 .icon {
   margin-left: 10px;
 }

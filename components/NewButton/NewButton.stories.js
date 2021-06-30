@@ -24,3 +24,10 @@ Secondary.args = {
   children: "Secondary",
   icon: faArrowDown
 };
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  variant: "outlined",
+  type: "button",
+  children: "Outlined"
+};
