@@ -19,6 +19,7 @@ Main.args = {
 export const Call = Template.bind({});
 Call.args = {
   variant: "call",
+  customClassText: "mobile-text",
   children: "021122333",
   href: "tel:021122333",
   icon: faPhone

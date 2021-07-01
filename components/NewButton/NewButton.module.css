@@ -1,8 +1,8 @@
 .button {
-  width: 180px;
-  padding: calc(1rem - 1px) calc(1.25rem - 1px);
+  width: 130px;
+  padding: calc(0.8rem - 1px) calc(1rem - 1px);
   color: #ffffff !important;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -27,14 +27,14 @@
   transition: 0.1s linear;
 }
 
-.secondary {
+.primary {
   background: red;
   box-shadow: 0px 4px 4px grey;
   transform: scale(1);
   transition: 0.1s linear;
 }
 
-.secondary:hover {
+.primary:hover {
   box-shadow: 0px 2px 2px grey;
   transform: scale(0.99);
   transition: 0.1s linear;
@@ -59,4 +59,12 @@
 
 .icon {
   margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    width: 180px;
+    padding: calc(1rem - 1px) calc(1.25rem - 1px);
+    font-size: 1rem;
+  }
 }

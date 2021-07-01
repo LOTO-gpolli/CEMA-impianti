@@ -33,3 +33,24 @@
 .icon {
   margin-left: 10px;
 }
+
+.mobile-text {
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .call {
+    width: fit-content;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50px;
+    padding: 20px 20px 20px 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .mobile-text {
+    display: none;
+  }
+}
