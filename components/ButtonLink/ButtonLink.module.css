@@ -1,5 +1,6 @@
 .button {
   width: 180px;
+  margin: 10px 0;
   padding: calc(1rem - 1px) calc(1.25rem - 1px);
   display: block;
   color: #ffffff !important;
