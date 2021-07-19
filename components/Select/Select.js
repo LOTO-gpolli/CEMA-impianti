@@ -8,7 +8,7 @@ import { capitalizeFirstLetter } from 'helpers/utils';
 import styles from './Select.module.css';
 
 const Select = ({ children, ...props }) => {
-  const { parentClass, placeholder, optionsList = [], required } = props;
+  const { parentClass, placeholder, optionsList = [], required, validation } = props;
   const [ isVisible, setIsVisible ] = useState(false);
   const [ isPlaceholder, setIsPlaceholder ] = useState(true);
   const [ selectedItem, setSelectedItem ] = useState(capitalizeFirstLetter(placeholder));
@@ -22,10 +22,13 @@ const Select = ({ children, ...props }) => {
     setSelectedItem(option);
     toggleVisibility();
   }
+
+  console.log(validation);
   
   return (
-    <div className={`${styles['select']} ${ parentClass ? `${parentClass}` : '' }`}>
-      <button className={`${styles['select__button']}`} onClick={() => toggleVisibility()}>
+    <div className={`${styles['select']}`}>
+      {/* <input className={`${styles['select__input']}`} value={!isPlaceholder ? selectedItem : ''}/> */}
+      <button className={`${styles['select__button']} ${ parentClass ? `${parentClass}` : '' }`} type="button" onClick={() => toggleVisibility()} {...validation}>
         <span className={`${styles['select__text']} ${ isPlaceholder ? `${styles['select__text--is-placeholder']}` : '' }`}>{selectedItem} { required && isPlaceholder ? '*' : '' }</span>
         <FontAwesomeIcon icon={ isVisible ? faChevronUp : faChevronDown } />
       </button>
