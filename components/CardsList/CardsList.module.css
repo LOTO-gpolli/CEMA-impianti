@@ -2,8 +2,7 @@
   text-align: center;
   padding-top: 3em;
   padding-bottom: 3em;
-
-  background-color: #eee;
+  background-color: rgb(240, 240, 240);
   color: #303030;
   font-size: 1.25rem;
 }
@@ -20,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 80px;
-  row-gap: 2rem;
+  row-gap: 4rem;
   justify-content: center;
 }
 
