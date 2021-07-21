@@ -16,7 +16,6 @@ export default function Home() {
       <Hero />
       <CardsList />
       <About />
-      <Gallery />
       <Form />
       <Footer />
       <Copyright />

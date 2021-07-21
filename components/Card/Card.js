@@ -15,12 +15,14 @@ const Card = ({
 
   return (
     <>
-      <Fade bottom>
+      <Fade bottom cascade>
         <div className={`${styles["card__container"]}`}>
           {/* <Image src={src} alt={alt} width={50} height={50} /> */}
           <FontAwesomeIcon icon={icon} size={"2x"} className={styles["card__icon"]} />
-          <h3 className={styles["card__title"]}>{title}</h3>
-          <p className={styles["card__subtitle"]}>{text}</p>
+          <div className={styles["card__content"]}>
+            <h3 className={styles["card__title"]}>{title}</h3>
+            <p className={styles["card__subtitle"]}>{text}</p>
+          </div>
         </div>
       </Fade>
     </>
