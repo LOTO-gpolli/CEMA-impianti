@@ -8,14 +8,17 @@
 }
 
 .cards-list__title {
-  margin-top: -90px;
-  padding-top: 90px;
+  /* margin-top: -90px;
+  padding-top: 90px; */
+  display: inline;
+  border-left: 0.5rem solid red;
+  padding-left: 0.5rem;
 }
 
 .cards__container {
   max-width: 1000px;
   margin: 40px auto;
-  padding: 0 5%;
+  padding: 1rem 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 80px;
