@@ -9,6 +9,7 @@
   z-index: 0;
   background-color: #fff;
   color: #303030;
+  position: relative;
 }
 
 .card__icon-container {
@@ -37,6 +38,24 @@
   border-radius: 2px;
   background-color: red;
   margin-top: 10px;
+  transition: all 1s ease-in-out;
+}
+.card__title-scroll {
+  margin: 2rem auto;
+  font-weight: bold;
+  /* border-left: 0.35rem solid red;
+  padding-left: 0.5rem; */
+}
+
+.card__title-scroll::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: red;
+  margin-top: 10px;
+  transition: all 1s ease-in-out;
 }
 
 .card__content {
