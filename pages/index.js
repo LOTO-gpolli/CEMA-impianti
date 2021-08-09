@@ -8,6 +8,7 @@ import About from "../components/About/About";
 import Form from "../components/Form/Form";
 import Gallery from "../components/Gallery/Gallery";
 import Copyright from "../components/Copyright/Copyright";
+import Team from "../components/Team/Team";
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
       <Hero />
       <CardsList />
       <About />
-      <Form />
+      <Team />
+      {/* <Form /> */}
       <Footer />
       <Copyright />
     </>
