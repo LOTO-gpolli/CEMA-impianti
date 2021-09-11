@@ -1,6 +1,6 @@
 .input {
   width: 100%;
-  padding: calc(1rem - 1px) calc(1.25rem - 1px);
+  padding: calc(0.75rem - 1px) calc(1.25rem - 1px);
   background-color: #fff;
   color: #000;
   font-size: 1rem;

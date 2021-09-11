@@ -1,0 +1,29 @@
+.button-GP {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(0.75rem - 1px) calc(2rem - 1px);
+  background-color: #E20613;
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid #AF040E;
+  border-radius: 30px;
+}
+
+.button-GP:hover {
+  background-color: #AF040E;
+}
+
+.button-GP__text {
+  padding: 0 0.5rem;
+}
+
+/* .button-GP__icon {
+  margin-left: 0.5rem;
+}
+
+.button-GP__icon--right {
+  margin-right: 0.5rem;
+  margin-left: 0;
+} */

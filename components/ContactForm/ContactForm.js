@@ -1,13 +1,43 @@
 import { useForm } from "react-hook-form";
 /* Components */
 import InputGroup from '../InputGroup/InputGroup';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import CheckboxGroup from "../CheckboxGroup/CheckboxGroup";
+import Checkbox from '../Checkbox/Checkbox';
+import ButtonGP from '../ButtonGP/ButtonGP';
 /* Styles */
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
-  const { handleSubmit: validateOnSubmit, register, watch, formState: { errors } } = useForm();
+  const { handleSubmit: validateOnSubmit, register, reset, watch, formState: { errors } } = useForm();
   
-  function handleSubmit(data) {
+  function encodeFormData(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+  
+  function handleSubmit(data, event) {
+    event.preventDefault();
+
+    fetch(
+      '/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: encodeFormData({ "form-name": "contact", ...data }),
+      })
+      .then(() => {
+        console.log('Email sent');
+        reset();
+      })
+      .catch(error => {
+        console.warn('The email has not been sent. Error: ', error);
+      }
+    );
+    
     console.log('data: ', data);
   }
 
@@ -19,13 +49,80 @@ const ContactForm = () => {
   console.log(errors);
   
   return (
-    <form className={`${styles['contact-form']}`} onSubmit={validateOnSubmit(handleSubmit)}>
-      <InputGroup label="Nome" required={true} type="input" placeholder="Inserisci il tuo nome" size="medium" validation={{...register("nome", { required: true, pattern: /^[A-Za-z]+$/i })}} error={errors["nome"]}/>
-      <InputGroup label="Cognome" required={true} type="input" placeholder="Inserisci il tuo cognome" size="medium" validation={{...register("cognome", { required: true, pattern: /^[A-Za-z]+$/i })}} error={errors["cognome"]} />
-      <InputGroup label="Email" required={true} type="input" placeholder="Inserisci il tuo indirizzo email" validation={{...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i })}} error={errors["email"]} />
-      <InputGroup label="Oggetto" required={true} type="select" placeholder="Seleziona l'oggetto della richiesta" optionsList={['opzione 1', 'opzione 2', 'opzione 3', 'opzione 4', 'opzione 5',]} validation={{...register("oggetto", { required: true })}} error={errors["oggetto"]} />
-      <InputGroup label="Messaggio" required={true} type="textarea" placeholder="Scrivi qui il tuo messaggio..." validation={{...register("messaggio", { required: true })}} error={errors["messaggio"]} />
-      <input type="submit" value="Submit" />
+    <form className={`${styles['contact-form']}`} name="contact" method="POST" action="/" onSubmit={validateOnSubmit(handleSubmit)} data-netlify="true">
+      <InputGroup
+        error={errors["nome"]}
+        label="Nome"
+        id="nome"
+        placeholder="Inserisci il tuo nome"
+        required={true}
+        size="medium"
+        type="input"
+        validation={{...register("nome", { required: true, pattern: /^[A-Za-z]+$/i })}}
+      />
+      <InputGroup
+        error={errors["cognome"]}
+        label="Cognome"
+        id="cognome"
+        placeholder="Inserisci il tuo cognome"
+        required={true}
+        size="medium"
+        type="input"
+        validation={{...register("cognome", { required: true, pattern: /^[A-Za-z]+$/i })}}
+      />
+      <InputGroup
+        error={errors["email"]}
+        label="Email"
+        id="email"
+        placeholder="Inserisci il tuo indirizzo email"
+        required={true}
+        type="input"
+        validation={{...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i })}}
+      />
+      <InputGroup
+        error={errors["oggetto"]}
+        label="Oggetto"
+        id="oggetto"
+        optionsList={['opzione 1', 'opzione 2', 'opzione 3', 'opzione 4', 'opzione 5',]}
+        placeholder="Seleziona l'oggetto della richiesta"
+        required={true}
+        type="select"
+        validation={{...register("oggetto", { required: true })}}
+      />
+      <InputGroup
+        error={errors["messaggio"]}
+        label="Messaggio"
+        id="messaggio"
+        placeholder="Scrivi qui il tuo messaggio..."
+        required={true}
+        type="textarea"
+        validation={{...register("messaggio", { required: true })}}
+      />
+      <CheckboxGroup>
+        <Checkbox
+          label="Dichiaro di aver letto e di accettare il testo della Informativa sulla Privacy"
+          name="privacy"
+          value={true}
+        />
+      </CheckboxGroup>
+      <ButtonGroup position='right'>
+        <ButtonGP
+          text='Submit'
+          link={false}
+          settings={
+            {
+              handleClick: function() { alert('click') },
+              href: '',
+              icon: {
+                name: '',
+                position: 'right',
+              },
+              type: 'submit',
+            }
+          }
+        />
+      </ButtonGroup>
+      {/* <input type="submit" value="Submit" /> */}
     </form>
   );
 }
