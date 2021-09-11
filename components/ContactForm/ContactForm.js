@@ -9,7 +9,7 @@ import ButtonGP from '../ButtonGP/ButtonGP';
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
-  const { handleSubmit: validateOnSubmit, register, reset, watch, formState: { errors } } = useForm();
+  const { clearErrors, handleSubmit: validateOnSubmit, register, reset, watch, formState: { errors }, setValue } = useForm();
   
   function encodeFormData(data) {
     return Object.keys(data)
@@ -38,6 +38,7 @@ const ContactForm = () => {
       }
     );
     
+    // TODO: resettare qui tutti i select
     console.log('data: ', data);
   }
 
@@ -46,7 +47,7 @@ const ContactForm = () => {
   // console.log(watch("email"));
   // console.log(watch("oggetto"));
   // console.log(watch("messaggio"));
-  console.log(errors);
+  console.log('all errors: ', errors, errors.oggetto?.ref);
   
   return (
     <form className={`${styles['contact-form']}`} name="contact" method="POST" action="/" onSubmit={validateOnSubmit(handleSubmit)} data-netlify="true">
@@ -80,6 +81,7 @@ const ContactForm = () => {
         validation={{...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i })}}
       />
       <InputGroup
+        clearErrors={clearErrors}
         error={errors["oggetto"]}
         label="Oggetto"
         id="oggetto"
@@ -88,6 +90,7 @@ const ContactForm = () => {
         required={true}
         type="select"
         validation={{...register("oggetto", { required: true })}}
+        setValue={setValue}
       />
       <InputGroup
         error={errors["messaggio"]}
@@ -100,9 +103,11 @@ const ContactForm = () => {
       />
       <CheckboxGroup>
         <Checkbox
+          error={errors["privacy"]}
           label="Dichiaro di aver letto e di accettare il testo della Informativa sulla Privacy"
           name="privacy"
           value={true}
+          validation={{...register("privacy", { required: true })}}
         />
       </CheckboxGroup>
       <ButtonGroup position='right'>
@@ -111,7 +116,7 @@ const ContactForm = () => {
           link={false}
           settings={
             {
-              handleClick: function() { alert('click') },
+              handleClick: function() {},
               href: '',
               icon: {
                 name: '',

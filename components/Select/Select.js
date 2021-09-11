@@ -8,7 +8,7 @@ import { capitalizeFirstLetter } from 'helpers/utils';
 import styles from './Select.module.css';
 
 const Select = ({ children, ...props }) => {
-  const { parentClass, placeholder, optionsList = [], required, validation } = props;
+  const { parentClass, placeholder, optionsList = [], required, clearErrors, validation, setValue } = props;
   const [ isVisible, setIsVisible ] = useState(false);
   const [ isPlaceholder, setIsPlaceholder ] = useState(true);
   const [ selectedItem, setSelectedItem ] = useState(capitalizeFirstLetter(placeholder));
@@ -20,15 +20,16 @@ const Select = ({ children, ...props }) => {
   function selectItem(option) {
     if (isPlaceholder) setIsPlaceholder(false);
     setSelectedItem(option);
+    setValue('oggetto', option);
+    clearErrors('oggetto');
     toggleVisibility();
   }
-
-  console.log(validation);
   
   return (
     <div className={`${styles['select']}`}>
       {/* <input className={`${styles['select__input']}`} value={!isPlaceholder ? selectedItem : ''}/> */}
-      <button className={`${styles['select__button']} ${ parentClass ? `${parentClass}` : '' }`} type="button" onClick={() => toggleVisibility()} {...validation}>
+      <input className={`${styles['select__hidden-value']}`} type="text" value={ isPlaceholder ? '' : selectedItem } {...validation}></input>
+      <button className={`${styles['select__button']} ${ parentClass ? `${parentClass}` : '' }`} type="button" onClick={() => toggleVisibility()} >
         <span className={`${styles['select__text']} ${ isPlaceholder ? `${styles['select__text--is-placeholder']}` : '' }`}>{selectedItem} { required && isPlaceholder ? '*' : '' }</span>
         <FontAwesomeIcon icon={ isVisible ? faChevronUp : faChevronDown } />
       </button>

@@ -1,3 +1,7 @@
+.select__hidden-value {
+  display: none;
+}
+
 .select__button {
   width: 100%;
   padding: calc(0.75rem - 1px) calc(1.25rem - 1px);

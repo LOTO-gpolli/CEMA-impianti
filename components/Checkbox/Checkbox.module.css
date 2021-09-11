@@ -38,6 +38,10 @@
   margin: 0;
 }
 
+.checkbox__field--has-errors {
+  border: 2px solid red;
+}
+
 /* .checkbox__label {
   display: grid;
   grid-template-columns: min-content auto;
