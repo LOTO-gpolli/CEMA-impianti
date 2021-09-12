@@ -25,9 +25,19 @@
   display: inline-block;
 }
 
+.input-group__error-message {
+  width: 100%;
+  height: 1.5rem;
+  padding: calc(0.25rem - 1px) calc(1.25rem - 1px);
+  background-color: #FFF;
+  color: #AF040E;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 .input-group__field--has-errors,
 .input-group__select--has-errors {
-  border: 2px solid red;
+  border: 2px solid #AF040E;
 }
 
 .input-group--dark-theme .input-group__label {

@@ -3,6 +3,8 @@ import Textarea from '../Textarea/Textarea';
 import Select from '../Select/Select';
 /* Styles */
 import styles from './InputGroup.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"; 
 
 const InputGroup = (props) => {
   const { label = '', id, placeholder = 'This is a placeholder', required = false, size = 'large', theme = 'light', type = '', optionsList = [], clearErrors, validation = {}, error = {}, setValue } = props;
@@ -21,9 +23,10 @@ const InputGroup = (props) => {
   }
   if (type) {
     return (
-      <div className={`${styles['input-group']} ${styles[`input-group--${size}`]} ${styles[`input-group--${theme}-theme`]}`}>
+      <div className={`${styles['input-group']} ${size !== 'medium' ? styles[`input-group--${size}`] : ''} ${theme !== 'light' ? styles[`input-group--${theme}-theme`] : ''}`}>
         { label && <label className={`${styles['input-group__label']} ${styles['input-group__label--is-visible']}`} htmlFor={id}>{label} {required ? '*': ''}</label> }
         { renderField(type) }
+        { error.message && <div className={`${styles['input-group__error-message']}`}>{ error.message ? (<><FontAwesomeIcon icon={faExclamationCircle} /><span> {error.message}</span></>) : '' }</div> }
       </div>
     );
   }

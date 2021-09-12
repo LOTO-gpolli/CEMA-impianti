@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 /* Icons */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 /* Helpers */
-import { capitalizeFirstLetter } from 'helpers/utils'; 
+import { capitalizeFirstLetter } from 'helpers/utils';
+import useOutsideClick from 'helpers/hooks/useOutsideEvent';
 /* Styles */
 import styles from './Select.module.css';
 
@@ -12,6 +13,7 @@ const Select = ({ children, ...props }) => {
   const [ isVisible, setIsVisible ] = useState(false);
   const [ isPlaceholder, setIsPlaceholder ] = useState(true);
   const [ selectedItem, setSelectedItem ] = useState(capitalizeFirstLetter(placeholder));
+  const selectWrapper = useRef(null);
 
   function toggleVisibility() {
     setIsVisible(prevState => !prevState);
@@ -24,9 +26,11 @@ const Select = ({ children, ...props }) => {
     clearErrors('oggetto');
     toggleVisibility();
   }
+
+  useOutsideClick(selectWrapper, () => setIsVisible(false));
   
   return (
-    <div className={`${styles['select']}`}>
+    <div className={`${styles['select']}`} ref={selectWrapper}>
       {/* <input className={`${styles['select__input']}`} value={!isPlaceholder ? selectedItem : ''}/> */}
       <input className={`${styles['select__hidden-value']}`} type="text" value={ isPlaceholder ? '' : selectedItem } {...validation}></input>
       <button className={`${styles['select__button']} ${ parentClass ? `${parentClass}` : '' }`} type="button" onClick={() => toggleVisibility()} >
