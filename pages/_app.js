@@ -1,4 +1,4 @@
-import "./globals.css";
+import './globals.css';
 
 // eslint-disable-next-line no-unused-vars
 function MyApp({ Component, pageProps }) {
