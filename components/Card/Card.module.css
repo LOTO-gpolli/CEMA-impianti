@@ -1,5 +1,5 @@
 .card__container {
-  height: 450px;
+  height: 400px;
   text-align: center;
   margin: 0 auto;
   border-radius: 0.5rem;
@@ -10,6 +10,11 @@
   background-color: #fff;
   color: #303030;
   position: relative;
+}
+
+.card__content {
+  text-align: center;
+  padding: 1rem 2rem;
 }
 
 .card__icon-container {
@@ -24,41 +29,52 @@
 }
 
 .card__title {
-  margin: 2rem auto;
+  margin: 1rem auto;
   font-weight: bold;
+  text-transform: uppercase;
   /* border-left: 0.35rem solid red;
   padding-left: 0.5rem; */
+  position: relative;
 }
 
 .card__title::after {
-  content: "";
+  content: '';
   display: block;
   width: 50px;
   height: 3px;
   border-radius: 2px;
   background-color: red;
-  margin-top: 10px;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   transition: all 1s ease-in-out;
 }
 .card__title-scroll {
-  margin: 2rem auto;
+  margin: 1rem auto;
   font-weight: bold;
+  text-transform: uppercase;
   /* border-left: 0.35rem solid red;
   padding-left: 0.5rem; */
+  position: relative;
 }
 
 .card__title-scroll::after {
-  content: "";
+  content: '';
   display: block;
-  width: 150px;
+  width: 100px;
   height: 3px;
   border-radius: 2px;
   background-color: red;
-  margin-top: 10px;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   transition: all 1s ease-in-out;
 }
 
-.card__content {
-  text-align: start;
-  padding: 1rem 2rem;
+.card__subtitle {
+  margin-top: 2rem;
 }
