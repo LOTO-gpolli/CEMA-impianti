@@ -1,5 +1,4 @@
 import styles from './Hero.module.css';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Import the FontAwesomeIcon component
@@ -7,25 +6,8 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'; // import the i
 import { Fade, Flip } from 'react-reveal';
 
 const Hero = () => {
-  /*Parallax Effect*/
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
-  console.log(`offsetY: ${offsetY}`);
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  /*End of Parallax Effect*/
-
   return (
-    <div
-      className={`${styles['hero']}`}
-      /*Applicazione del Parallax Effect al div Hero. Memo background-attachment: fixed;*/
-      style={{
-        transform: `translateY(${-offsetY * 0.3}px)`,
-        opacity: `${-offsetY * 0.0025 + 1}`
-      }}
-    >
+    <div className={`${styles['hero']}`}>
       <Fade left>
         <div className={`${styles['hero__heading']}`}>
           <h1 className={`${styles['hero__title']}`}>CE.MA Impianti</h1>
@@ -40,6 +22,18 @@ const Hero = () => {
             </button>
           </Fade>
         </div>
+      </Fade>
+      <Fade>
+        <Flip top delay={1000}>
+          <div className={`${styles['hero__image-container']}`}>
+            <Image
+              className={`${styles['hero__image']}`}
+              src="/images/Hero-image-sm.jpg"
+              width={484}
+              height={367}
+            />
+          </div>
+        </Flip>
       </Fade>
     </div>
   );
