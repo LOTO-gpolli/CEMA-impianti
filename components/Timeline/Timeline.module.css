@@ -1,0 +1,20 @@
+.timeline__title {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.timeline__container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  position: relative;
+}
+
+.timeline__container::after {
+  background-color: red;
+  content: '';
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}
