@@ -1,29 +1,29 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 /* Components */
-import { Button } from "../Button/Button";
+import { Button } from '../Button/Button';
 /* Styles */
-import styles from "./Header.module.css";
+import styles from './Header.module.css';
 /* FontAwesome */
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesomeIcon component
 import {
   faBriefcase,
   faEnvelopeOpenText,
   faImages,
   faPhone,
   faUserFriends
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import Hamburger from "hamburger-react";
-import { FaPhone, FaPortrait } from "react-icons/fa";
+import Hamburger from 'hamburger-react';
+import { FaPhone, FaPortrait } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
     <>
-      <header className={`${styles["header"]}`}>
+      <header className={`${styles['header']}`}>
         <a href="#">
           {/* <Image
             className={`${styles["header__logo"]}`}
@@ -31,20 +31,20 @@ const Header = () => {
             width={50}
             height={50}
           /> */}
-          <h1 className={`${styles["header__title"]}`}>CE.MA IMPIANTI</h1>
+          <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1>
         </a>
-        <nav className={`${styles["header__navigation"]}`}>
-          <ul className={`${styles["header__navigation-list"]}`}>
-            <li className={`${styles["header__navigation-item"]}`}>
+        <nav className={`${styles['header__navigation']}`}>
+          <ul className={`${styles['header__navigation-list']}`}>
+            <li className={`${styles['header__navigation-item']}`}>
               <a href="#servizi">servizi</a>
             </li>
-            <li className={`${styles["header__navigation-item"]}`}>
+            <li className={`${styles['header__navigation-item']}`}>
               <a href="#about">chi siamo</a>
             </li>
-            <li className={`${styles["header__navigation-item"]}`}>
+            <li className={`${styles['header__navigation-item']}`}>
               <a href="#gallery">gallery</a>
             </li>
-            <li className={`${styles["header__navigation-item"]}`}>
+            <li className={`${styles['header__navigation-item']}`}>
               <a href="#contatti">contatti</a>
             </li>
           </ul>
@@ -52,60 +52,54 @@ const Header = () => {
 
         <Button
           settings={{
-            text: "399 1112233",
-            type: "button",
-            customClass: `${styles["header__button"]}`,
-            customClassText: `${styles["header__button-text"]}`,
+            text: '399 1112233',
+            type: 'button',
+            customClass: `${styles['header__button']}`,
+            customClassText: `${styles['header__button-text']}`,
             icon: faPhone
           }}
         />
-        <div className={`${styles["header__toggle-menu"]}`}>
+        <div className={`${styles['header__toggle-menu']}`}>
           <Hamburger toggled={isOpen} toggle={setOpen} color="red" />
           {/* <FontAwesomeIcon icon={faBars} size="lg" /> */}
         </div>
       </header>
-      <ul
-        className={`${styles["mobile-menu"]} ${
-          isOpen
-            ? `${styles["mobile-menu--is-open"]}`
-            : `${styles["mobile-menu--is-close"]}`
-        } `}
-      >
-        <li className={`${styles["mobile__navigation-item"]}`}>
+      <ul className={`${styles['mobile-menu']} ${isOpen ? `${styles['is-open']}` : ''} `}>
+        <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faBriefcase} />
             <a href="#servizi" onClick={() => setOpen(false)}>
-              {" "}
+              {' '}
               Servizi
             </a>
           </div>
         </li>
 
-        <li className={`${styles["mobile__navigation-item"]}`}>
+        <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faUserFriends} />
             <a href="#about" onClick={() => setOpen(false)}>
-              {" "}
+              {' '}
               Chi Siamo
             </a>
           </div>
         </li>
 
-        <li className={`${styles["mobile__navigation-item"]}`}>
+        <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faImages} />
             <a href="#gallery" onClick={() => setOpen(false)}>
-              {" "}
+              {' '}
               Gallery
             </a>
           </div>
         </li>
 
-        <li className={`${styles["mobile__navigation-item"]}`}>
+        <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faEnvelopeOpenText} />
             <a href="#contatti" onClick={() => setOpen(false)}>
-              {" "}
+              {' '}
               Contatti
             </a>
           </div>
