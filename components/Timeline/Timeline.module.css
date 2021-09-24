@@ -1,6 +1,14 @@
-.timeline__title {
+.timeline-section__container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #fff;
   text-align: center;
-  margin-top: 2em;
+}
+
+.timeline__title {
+  display: inline;
+  border-left: 0.5rem solid red;
+  padding-left: 0.5rem;
 }
 
 .timeline__container {

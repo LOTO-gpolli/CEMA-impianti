@@ -6,11 +6,13 @@ const Timeline = () => {
   return (
     timelineData.length > 0 && (
       <>
-        <h2 className={`${styles['timeline__title']}`}>TIMELINE SECTION</h2>
-        <div className={`${styles['timeline__container']}`}>
-          {timelineData.map((data, idx) => (
-            <TimelineItem data={data} key={idx} />
-          ))}
+        <div className={`${styles['timeline-section__container']}`}>
+          <h2 className={`${styles['timeline__title']}`}>IL NOSTRO METODO</h2>
+          <div className={`${styles['timeline__container']}`}>
+            {timelineData.map((data, idx) => (
+              <TimelineItem data={data} key={idx} />
+            ))}
+          </div>
         </div>
       </>
     )
