@@ -1,0 +1,29 @@
+.timeline-section__container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.timeline__title {
+  display: inline;
+  border-left: 0.5rem solid red;
+  padding-left: 0.5rem;
+  font-size: 2rem;
+}
+
+.timeline__container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  position: relative;
+}
+
+.timeline__container::after {
+  background-color: red;
+  content: '';
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}

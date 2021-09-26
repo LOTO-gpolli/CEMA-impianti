@@ -1,0 +1,81 @@
+.card__container {
+  height: 400px;
+  max-width: 295px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  border-bottom: 0.35rem solid red;
+  box-shadow: var(--box-shadow);
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
+  z-index: 0;
+  background-color: #fff;
+  color: #303030;
+  position: relative;
+}
+
+.card__content {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.card__icon-container {
+  background: red;
+  clip-path: circle(100px at center 0);
+  padding: 20px;
+}
+
+.card__icon {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.card__title {
+  margin: 1rem auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* border-left: 0.35rem solid red;
+  padding-left: 0.5rem; */
+  position: relative;
+}
+
+.card__title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: red;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 1s ease-in-out;
+}
+.card__title-scroll {
+  margin: 1rem auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* border-left: 0.35rem solid red;
+  padding-left: 0.5rem; */
+  position: relative;
+}
+
+.card__title-scroll::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: red;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 1s ease-in-out;
+}
+
+.card__subtitle {
+  margin-top: 2rem;
+}
