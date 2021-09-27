@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Import the FontAwesomeIcon component
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'; // import the icons you need
 // import { Fade } from 'react-reveal';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   /*Parallax Effect*/
@@ -16,6 +17,31 @@ const Hero = () => {
   }, []);
   /*End of Parallax Effect*/
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: {
+      opacity: 0,
+      y: '-20px',
+    },
+    visible: {
+      opacity: 1,
+      y: '0px',
+      transition: {
+        duration: 1,
+      },
+    },
+  };
   return (
     <div
       className={`${styles['hero']}`}
@@ -26,17 +52,30 @@ const Hero = () => {
       }}
     >
       {/* <Fade left> */}
-      <div className={`${styles['hero__heading']}`}>
-        <h1 className={`${styles['hero__title']}`}>CE.MA Impianti</h1>
-        <h2 className={`${styles['hero__subtitle']}`}>Impianti elettrici civili e industriali</h2>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className={`${styles['hero__heading']}`}
+      >
+        <motion.h1 variants={childVariants} className={`${styles['hero__title']}`}>
+          CE.MA Impianti
+        </motion.h1>
+        <motion.h2 variants={childVariants} className={`${styles['hero__subtitle']}`}>
+          Impianti elettrici civili e industriali
+        </motion.h2>
         {/* <Fade up delay={800}> */}
-        <button className={`${styles['hero__button']}`} type="button">
+        <motion.button
+          variants={childVariants}
+          className={`${styles['hero__button']}`}
+          type="button"
+        >
           <a href="#servizi">
             <FontAwesomeIcon icon={faArrowDown} size="lg" /> Scopri di più
           </a>
-        </button>
+        </motion.button>
         {/* </Fade> */}
-      </div>
+      </motion.div>
       {/* </Fade> */}
     </div>
   );
