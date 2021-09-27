@@ -8,9 +8,10 @@
   },
   "extends": ["eslint:recommended", "eslint-config-prettier"],
   "rules": {
-    "strict": ["error", "never"],
+    "strict": ["error", "never"]
   },
   "env": {
     "browser": true
-  }
+  },
+  "plugin": "react/recommended"
 }

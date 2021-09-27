@@ -1,6 +1,6 @@
 .cards-list__container {
   text-align: center;
-  padding-top: 3em;
+  padding-top: 4em;
   padding-bottom: 3em;
   background-color: #fff;
   color: #303030;
@@ -8,8 +8,6 @@
 }
 
 .cards-list__title {
-  /* margin-top: -90px;
-  padding-top: 90px; */
   display: inline;
   border-left: 0.5rem solid red;
   padding-left: 0.5rem;

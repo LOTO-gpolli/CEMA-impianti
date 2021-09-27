@@ -1,6 +1,7 @@
 import { useState } from 'react';
 /* Components */
 import { Button } from '../Button/Button';
+import Burger from '../Burger/Burger';
 /* Styles */
 import styles from './Header.module.css';
 /* FontAwesome */
@@ -13,11 +14,10 @@ import {
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Hamburger from 'hamburger-react';
 // import { FaPhone, FaPortrait } from 'react-icons/fa';
 
 const Header = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -52,7 +52,7 @@ const Header = () => {
           }}
         />
         <div className={`${styles['header__toggle-menu']}`}>
-          <Hamburger toggled={isOpen} toggle={setOpen} color="red" />
+          <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </header>
       <ul
@@ -61,7 +61,7 @@ const Header = () => {
         <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faBriefcase} />
-            <a href="#servizi" onClick={() => setOpen(false)}>
+            <a href="#servizi" onClick={() => setIsOpen(false)}>
               {' '}
               Servizi
             </a>
@@ -71,7 +71,7 @@ const Header = () => {
         <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faUserFriends} />
-            <a href="#about" onClick={() => setOpen(false)}>
+            <a href="#about" onClick={() => setIsOpen(false)}>
               {' '}
               Chi Siamo
             </a>
@@ -81,7 +81,7 @@ const Header = () => {
         <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faImages} />
-            <a href="#gallery" onClick={() => setOpen(false)}>
+            <a href="#gallery" onClick={() => setIsOpen(false)}>
               {' '}
               Gallery
             </a>
@@ -91,7 +91,7 @@ const Header = () => {
         <li className={`${styles['mobile__navigation-item']}`}>
           <div>
             <FontAwesomeIcon icon={faEnvelopeOpenText} />
-            <a href="#contatti" onClick={() => setOpen(false)}>
+            <a href="#contatti" onClick={() => setIsOpen(false)}>
               {' '}
               Contatti
             </a>

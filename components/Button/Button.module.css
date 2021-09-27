@@ -1,0 +1,17 @@
+.button {
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background-color: green;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+}
+
+.button:active,
+.button:focus,
+.button:hover {
+  outline: none;
+}
