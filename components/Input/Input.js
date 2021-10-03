@@ -1,6 +1,6 @@
 import styles from './Input.module.css';
 
-const Input = ({ props }) => {
+const Input = (props) => {
   const { id, parentClass, placeholder, validation } = props;
   
   return (

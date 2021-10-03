@@ -8,7 +8,7 @@ import useOutsideClick from '../../helpers/hooks/useOutsideEvent';
 /* Styles */
 import styles from './Select.module.css';
 
-const Select = ({ props }) => {
+const Select = (props) => {
   const { parentClass, placeholder, optionsList = [], required, clearErrors, validation, setValue } = props;
   const [ isVisible, setIsVisible ] = useState(false);
   const [ isPlaceholder, setIsPlaceholder ] = useState(true);
