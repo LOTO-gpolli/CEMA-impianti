@@ -1,15 +1,15 @@
 module.exports = {
   "disableEmoji": false,
   "list": [
-    "test",
     "feat",
     "fix",
-    "chore",
-    "docs",
-    "refactor",
+    "test",
     "style",
+    "perf",
+    "refactor",
+    "chore",
     "ci",
-    "perf"
+    "docs",
   ],
   "maxMessageLength": 64,
   "minMessageLength": 3,
