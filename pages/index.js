@@ -1,3 +1,5 @@
+import ContactForm from "../components/ContactForm/ContactForm";
+
 export default function Home() {
   return (
     <>
@@ -7,6 +9,7 @@ export default function Home() {
       <div>About us</div>
       <div>Gallery</div>
       <div>Form</div>
+      <ContactForm />
       <div>Footer</div>
       <div>Copyright</div>
     </>
