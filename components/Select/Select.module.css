@@ -1,0 +1,54 @@
+.select__hidden-value {
+  display: none;
+}
+
+.select__button {
+  width: 100%;
+  padding: calc(0.75rem - 1px) calc(1.25rem - 1px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  text-align: left;
+  border: 1px solid #1f1b27;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.select__text--is-placeholder {
+  color: #757575;
+}
+
+.select__menu {
+  width: 100%;
+  display: none;
+  padding: calc(1.5rem - 1px) 0;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #1f1b27;
+  border-radius: 30px;
+}
+
+.select__menu--is-visible {
+  display: block;
+}
+
+.select__list {
+  max-height: 150px;
+  margin: 0;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.select__list-item {
+  padding: calc(0.5rem) calc(1.25rem - 1px);
+  font-size: 1rem;
+}
+
+.select__list-item:hover {
+  color: #fff;
+  background-color: #757575;
+  cursor: pointer;
+}
