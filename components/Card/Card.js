@@ -42,6 +42,21 @@ const Card = ({
       transition: {
         delay: 0.2,
         duration: 1,
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: {
+      opacity: isVisible ? 1 : 0,
+      y: isVisible ? '0px' : '20px',
+    },
+    visible: {
+      opacity: isVisible ? 1 : 0,
+      y: isVisible ? '0px' : '20px',
+      transition: {
+        duration: 1,
       },
     },
   };
@@ -56,17 +71,17 @@ const Card = ({
         variants={containerVariants}
         className={`${styles['card__container']}`}
       >
-        <div className={styles['card__icon-container']}>
+        <motion.div variants={childVariants} className={styles['card__icon-container']}>
           <FontAwesomeIcon icon={icon} size={'2x'} className={styles['card__icon']} />
-        </div>
+        </motion.div>
         {/* <Fade cascade> */}
-        <div className={styles['card__content']}>
+        <motion.div variants={childVariants} className={styles['card__content']}>
           <h3 className={underline ? styles['card__title-scroll'] : styles['card__title']}>
             {title}
           </h3>
 
           <p className={styles['card__subtitle']}>{text}</p>
-        </div>
+        </motion.div>
         {/* </Fade> */}
       </motion.div>
       {/* </Fade> */}

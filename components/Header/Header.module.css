@@ -30,6 +30,7 @@
 
 .header__navigation-item:hover {
   color: red;
+  transform: scale(1.1);
   transition: 0.3s ease-in-out;
 }
 
@@ -106,7 +107,7 @@
     display: none;
   }
 
-  .mobile-menu.is-open {
+  .mobile-menu--is-open {
     display: none;
   }
 }

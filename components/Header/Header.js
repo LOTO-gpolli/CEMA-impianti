@@ -41,7 +41,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-
         <Button
           settings={{
             text: '399 1112233',
