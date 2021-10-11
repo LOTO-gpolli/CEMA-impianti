@@ -1,0 +1,85 @@
+.about__container {
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  font-size: 1.25rem;
+  background-color: #fff;
+  color: #303030;
+}
+
+.about__title {
+  display: inline;
+  border-left: 0.5rem solid red;
+  padding-left: 0.5rem;
+}
+
+.about__grid-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 5%;
+  display: grid; /*per avere i child element a griglia*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* ripeti auto-fit con una larghezza minima della colonna di 300px e al max 1fr(action) a tutta larghezza */
+  column-gap: 100px;
+  row-gap: 2rem;
+  text-align: left;
+}
+
+.about__image {
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
+  border: 2px solid white;
+}
+
+.grid__item1 {
+  order: 1;
+  margin: auto 0;
+}
+.grid__item2 {
+  height: fit-content;
+  order: 2;
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
+  border: 2px solid white;
+  align-self: center;
+}
+.grid__item3 {
+  height: fit-content;
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
+  border: 2px solid white;
+  order: 4;
+  align-self: center;
+}
+.grid__item4 {
+  order: 3;
+  margin: auto 0;
+}
+
+.about__list-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 5%;
+  display: grid;
+}
+
+.about__list-container h3 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.about__list {
+  justify-self: left;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .grid__item1 {
+    order: 1;
+  }
+  .grid__item2 {
+    order: 2;
+  }
+  .grid__item3 {
+    order: 3;
+  }
+  .grid__item4 {
+    order: 4;
+  }
+}
