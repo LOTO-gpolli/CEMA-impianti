@@ -26,7 +26,7 @@
 }
 
 .hero__button {
-  background-color: red;
+  background-color: #e20613;
   padding: 1rem 1.5rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -46,7 +46,7 @@
 .hero__button:focus,
 .hero__button:hover {
   outline: none;
-  background-color: darkred;
+  background-color: #af040e;
   transition: 0.3s ease-in-out;
 }
 

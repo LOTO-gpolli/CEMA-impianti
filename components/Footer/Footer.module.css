@@ -1,29 +1,30 @@
 .footer {
-  /* display: flex;
-  flex-wrap: wrap; */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  column-gap: 4em;
-  row-gap: 2em;
+  display: flex;
+  flex-wrap: wrap;
   color: #ccc;
   padding: 3rem;
   background-color: #303030;
+  justify-content: space-between;
 }
 
 .footer p {
   padding: 0.5rem;
 }
 
-/* .footer__company-info {
-  margin: 0 auto;
+.footer__company-info {
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
+
 .footer__company-social {
-  margin: 0 auto;
-} */
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
 
 .footer__privacy-cookie {
-  /* margin: 0 auto; */
   cursor: pointer;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
 .footer__social-icon {

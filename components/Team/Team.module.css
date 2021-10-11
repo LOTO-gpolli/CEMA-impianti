@@ -1,10 +1,10 @@
 .team__container {
   text-align: center;
-  padding-top: 3em;
+  padding-top: 4em;
   padding-bottom: 3em;
+  font-size: 1.25rem;
   background-color: #fff;
   color: #303030;
-  font-size: 1.25rem;
 }
 
 .team__title {

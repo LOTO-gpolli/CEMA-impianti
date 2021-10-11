@@ -2,7 +2,7 @@ import TeamMember from '../TeamMember/TeamMember';
 import styles from '../Team/Team.module.css';
 const Team = () => {
   return (
-    <div id="servizi" className={`${styles['team__container']}`}>
+    <div id="team" className={`${styles['team__container']}`}>
       <h2 className={`${styles['team__title']}`}>IL TEAM</h2>
       <div className={`${styles['team-members__container']}`}>
         <TeamMember

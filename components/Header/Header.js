@@ -1,6 +1,6 @@
 import { useState } from 'react';
 /* Components */
-import { Button } from '../Button/Button';
+import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
 /* Styles */
 import styles from './Header.module.css';
@@ -13,8 +13,6 @@ import {
   faPhone,
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
-
-// import { FaPhone, FaPortrait } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +32,7 @@ const Header = () => {
               <a href="#about">chi siamo</a>
             </li>
             <li className={`${styles['header__navigation-item']}`}>
-              <a href="#gallery">gallery</a>
+              <a href="#team">team</a>
             </li>
             <li className={`${styles['header__navigation-item']}`}>
               <a href="#contatti">contatti</a>
@@ -42,12 +40,15 @@ const Header = () => {
           </ul>
         </nav>
         <Button
+          text="3391122333"
+          link="true"
           settings={{
-            text: '399 1112233',
-            type: 'button',
+            href: 'tel:3391122333',
+            icon: {
+              name: faPhone,
+            },
             customClass: `${styles['header__button']}`,
             customClassText: `${styles['header__button-text']}`,
-            icon: faPhone,
           }}
         />
         <div className={`${styles['header__toggle-menu']}`}>
