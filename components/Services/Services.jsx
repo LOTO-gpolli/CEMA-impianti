@@ -3,8 +3,11 @@ import CardsList from '../CardsList/CardsList'
 
 const Services = () => {
   return (
-    <section className="">
-      <SectionHeading title="I nostri servizi" />
+    <section className="services">
+      <SectionHeading
+        title="I nostri servizi"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius tempor lorem sed congue."
+      />
       <CardsList />
     </section>
   );

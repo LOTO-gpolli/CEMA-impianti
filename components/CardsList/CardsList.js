@@ -28,7 +28,7 @@ const CardsList = () => {
   ];
 
   return (
-      <div className={`${styles['cards__container']}`}>
+      <div className={`${styles['cards-list']}`}>
         {/* <Zoom> */}
         {cards && cards.map(card => (<Card settings={card} />))}
         {/* </Zoom> */}

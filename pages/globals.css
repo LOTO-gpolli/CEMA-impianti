@@ -20,6 +20,11 @@ footer {
   padding: 0 4.5rem;
 }
 
+section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 input,
 textarea,
 button {
