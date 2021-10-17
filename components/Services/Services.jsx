@@ -9,6 +9,7 @@ const Services = () => {
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius tempor lorem sed congue."
       />
       <CardsList />
+      <div>Box grigio con certificazione IMQ</div>
     </section>
   );
 }

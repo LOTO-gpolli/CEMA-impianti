@@ -24,6 +24,7 @@
   height: 4px;
   background-color: red;
   text-align: center;
+  border-radius: 0.25rem;
   opacity: 1;
   overflow: hidden;
   transition: width 300ms, transform 300ms;
@@ -39,5 +40,6 @@
 .section-heading__subtitle {
   color: #303030;
   padding: 1rem 0;
+  font-weight: 400;
   text-align: center;
 }
