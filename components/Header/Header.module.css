@@ -23,16 +23,17 @@
 
 .header__navigation-item {
   padding: 0 1rem;
-  cursor: pointer;
+  font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
-.header__navigation-item:hover {
+/* .header__navigation-item:hover {
   color: red;
   transform: scale(1.1);
   transition: 0.3s ease-in-out;
-}
+} */
 
 .header__button {
   position: fixed;
@@ -94,7 +95,6 @@
     position: relative;
     bottom: 0;
     right: 0;
-    padding: 0.5rem;
   }
 
   .header__button-text {

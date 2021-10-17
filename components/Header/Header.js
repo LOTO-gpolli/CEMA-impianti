@@ -17,6 +17,29 @@ import {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigationItems = [
+    {
+      target: 'services',
+      text: 'Servizi',
+    },
+    {
+      target: 'about',
+      text: 'Chi siamo',
+    },
+    {
+      target: 'team',
+      text: 'Team',
+    },
+    // {
+    //   target: 'works',
+    //   text: 'I nostri lavori',
+    // },
+    {
+      target: 'contacts',
+      text: 'Contatti',
+    },
+  ];
+
   return (
     <>
       <header className={`${styles['header']}`}>
@@ -25,18 +48,11 @@ const Header = () => {
         </a>
         <nav className={`${styles['header__navigation']}`}>
           <ul className={`${styles['header__navigation-list']}`}>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#servizi">servizi</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#about">chi siamo</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#team">team</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#contatti">contatti</a>
-            </li>
+            { navigationItems && navigationItems.map(item => (
+              <li className={`${styles['header__navigation-item']}`}>
+                <a href={`#${item.target}`}>{item.text}</a>
+              </li>
+            )) }
           </ul>
         </nav>
         <Button
@@ -47,8 +63,8 @@ const Header = () => {
             icon: {
               name: faPhone,
             },
-            customClass: `${styles['header__button']}`,
-            customClassText: `${styles['header__button-text']}`,
+            // customClass: `${styles['header__button']}`,
+            // customClassText: `${styles['header__button-text']}`,
           }}
         />
         <div className={`${styles['header__toggle-menu']}`}>
