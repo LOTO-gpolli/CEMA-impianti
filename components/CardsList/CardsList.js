@@ -1,14 +1,15 @@
-// import { Zoom } from 'react-reveal';
 import Card from '../Card/Card';
 import styles from '../CardsList/CardsList.module.css';
 import { faBell, faIndustry, faLaptopHouse, faVideo } from '@fortawesome/free-solid-svg-icons';
+import SectionHeading from '../SectionHeading/SectionHeading';
+import Box from '../Box/Box';
 
 const CardsList = () => {
   return (
-    <div id="servizi" className={`${styles['cards-list__container']}`}>
-      <h2 className={`${styles['cards-list__title']}`}>I NOSTRI SERVIZI</h2>
+    <section id="servizi" className={`${styles['cards-list__container']}`}>
+      {/* <h2 className={`${styles['cards-list__title']}`}>I NOSTRI SERVIZI</h2> */}
+      <SectionHeading title="I NOSTRI SERVIZI" />
       <div className={`${styles['cards__container']}`}>
-        {/* <Zoom> */}
         <Card
           settings={{
             icon: faIndustry,
@@ -37,9 +38,9 @@ const CardsList = () => {
             text: `Servizi per automazione di cancelli / serrande / tapparelle / porte.`,
           }}
         />
-        {/* </Zoom> */}
       </div>
-    </div>
+      <Box />
+    </section>
   );
 };
 

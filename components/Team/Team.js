@@ -1,9 +1,11 @@
 import TeamMember from '../TeamMember/TeamMember';
 import styles from '../Team/Team.module.css';
+import SectionHeading from '../SectionHeading/SectionHeading';
 const Team = () => {
   return (
-    <div id="team" className={`${styles['team__container']}`}>
-      <h2 className={`${styles['team__title']}`}>IL TEAM</h2>
+    <section id="team" className={`${styles['team__container']}`}>
+      {/* <h2 className={`${styles['team__title']}`}>IL TEAM</h2> */}
+      <SectionHeading title="Il team" />
       <div className={`${styles['team-members__container']}`}>
         <TeamMember
           settings={{
@@ -34,7 +36,7 @@ const Team = () => {
           }}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

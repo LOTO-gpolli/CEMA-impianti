@@ -17,6 +17,10 @@
   font-size: 1.5rem;
 }
 
+.header__logo {
+  position: relative;
+}
+
 .header__navigation-list {
   display: none;
 }
@@ -30,8 +34,8 @@
 
 .header__navigation-item:hover {
   color: red;
-  transform: scale(1.1);
-  transition: 0.3s ease-in-out;
+  /* transform: scale(1.1);
+  transition: 0.3s ease-in-out; */
 }
 
 .header__button {
@@ -88,6 +92,7 @@
     display: flex;
     text-transform: uppercase;
     list-style-type: none;
+    font-weight: bold;
   }
 
   .header__button {

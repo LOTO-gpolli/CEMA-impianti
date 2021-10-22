@@ -14,15 +14,25 @@ import {
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 
+import Image from 'next/image';
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <header className={`${styles['header']}`}>
-        <a href="#">
-          <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1>
-        </a>
+        <div>
+          <a href="#">
+            {/* <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1> */}
+            <Image
+              className={`${styles['header__logo']}`}
+              src="/images/logo small.png"
+              width={70}
+              height={70}
+            />
+          </a>
+        </div>
         <nav className={`${styles['header__navigation']}`}>
           <ul className={`${styles['header__navigation-list']}`}>
             <li className={`${styles['header__navigation-item']}`}>

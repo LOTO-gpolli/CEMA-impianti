@@ -29,62 +29,67 @@ const Card = ({
   // });
 
   /*useOnScreen*/
-  const ref = useRef(null);
-  const isVisible = useOnScreen(ref);
+  // const ref = useRef(null);
+  // const isVisible = useOnScreen(ref);
   /*End of useOnScreen*/
 
-  const containerVariants = {
-    hidden: {
-      opacity: isVisible ? 1 : 0,
-    },
-    visible: {
-      opacity: isVisible ? 1 : 0,
-      transition: {
-        delay: 0.2,
-        duration: 1,
-        staggerChildren: 0.4,
-      },
-    },
-  };
+  /* -- FRAMER MOTION -- */
+  // const containerVariants = {
+  //   hidden: {
+  //     opacity: isVisible ? 1 : 0,
+  //   },
+  //   visible: {
+  //     opacity: isVisible ? 1 : 0,
+  //     transition: {
+  //       delay: 0.2,
+  //       duration: 1,
+  //       staggerChildren: 0.4,
+  //     },
+  //   },
+  // };
 
-  const childVariants = {
-    hidden: {
-      opacity: isVisible ? 1 : 0,
-      y: isVisible ? '0px' : '20px',
-    },
-    visible: {
-      opacity: isVisible ? 1 : 0,
-      y: isVisible ? '0px' : '20px',
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  // const childVariants = {
+  //   hidden: {
+  //     opacity: isVisible ? 1 : 0,
+  //     y: isVisible ? '0px' : '20px',
+  //   },
+  //   visible: {
+  //     opacity: isVisible ? 1 : 0,
+  //     y: isVisible ? '0px' : '20px',
+  //     transition: {
+  //       duration: 1,
+  //     },
+  //   },
+  // };
+
+  /* -- END OF FRAMER MOTION -- */
 
   return (
     <>
-      {/* <Fade bottom> */}
       <motion.div
-        ref={ref}
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
+        // ref={ref}
+        // initial="hidden"
+        // animate="visible"
+        // variants={containerVariants}
         className={`${styles['card__container']}`}
       >
-        <motion.div variants={childVariants} className={styles['card__icon-container']}>
+        <motion.div
+          //  variants={childVariantS}
+          className={styles['card__icon-container']}
+        >
           <FontAwesomeIcon icon={icon} size={'2x'} className={styles['card__icon']} />
         </motion.div>
-        {/* <Fade cascade> */}
-        <motion.div variants={childVariants} className={styles['card__content']}>
+        <motion.div
+          //  variants={childVariants}
+          className={styles['card__content']}
+        >
           <h3 className={underline ? styles['card__title-scroll'] : styles['card__title']}>
             {title}
           </h3>
 
           <p className={styles['card__subtitle']}>{text}</p>
         </motion.div>
-        {/* </Fade> */}
       </motion.div>
-      {/* </Fade> */}
     </>
   );
 };

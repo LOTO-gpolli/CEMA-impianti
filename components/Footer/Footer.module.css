@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   color: #ccc;
@@ -8,7 +9,7 @@
 }
 
 .footer p {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .footer__company-info {
@@ -16,7 +17,9 @@
   padding: 0 1rem;
 }
 
-.footer__company-social {
+.footer__company-social p {
+  display: flex;
+  align-items: center;
   margin-top: 2rem;
   padding: 0 1rem;
 }

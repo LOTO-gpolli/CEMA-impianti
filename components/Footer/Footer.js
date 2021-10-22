@@ -26,12 +26,12 @@ const Footer = () => {
             Contattaci sui social{' '}
             <FontAwesomeIcon
               icon={faFacebook}
-              size="lg"
+              size="2x"
               className={`${styles['footer__social-icon']}`}
             />
             <FontAwesomeIcon
               icon={faWhatsapp}
-              size="lg"
+              size="2x"
               className={`${styles['footer__social-icon']}`}
             />
           </p>

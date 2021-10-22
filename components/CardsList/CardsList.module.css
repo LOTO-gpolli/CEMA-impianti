@@ -14,12 +14,12 @@
 }
 
 .cards__container {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 60px auto;
   padding: 1rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  column-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  column-gap: 1rem;
   row-gap: 2rem;
   justify-content: center;
 }
@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 1250px) and (min-width: 900px) {
   .cards__container {
-    grid-template-columns: 49.5% 49.5%;
-    column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 8rem;
   }
 }
