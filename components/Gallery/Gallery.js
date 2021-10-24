@@ -1,6 +1,5 @@
-import { useState } from "react";
-import styles from "../Gallery/Gallery.module.css";
-import Carousel from "react-bootstrap/Carousel";
+import { useState } from 'react';
+import styles from '../Gallery/Gallery.module.css';
 
 const Gallery = () => {
   const [index, setIndex] = useState(0);
@@ -10,9 +9,9 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className={`${styles["gallery__container"]}`}>
-      <h2 className={`${styles["gallery__title"]}`}>I NOSTRI LAVORI</h2>
-      <Carousel
+    <section id="gallery" className={`${styles['gallery__container']}`}>
+      <h2 className={`${styles['gallery__title']}`}>I NOSTRI LAVORI</h2>
+      {/* <Carousel
         activeIndex={index}
         onSelect={handleSelect}
         className={`${styles["gallery__carousel"]}`}
@@ -46,7 +45,7 @@ const Gallery = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
     </section>
   );
 };

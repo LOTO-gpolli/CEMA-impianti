@@ -12,11 +12,7 @@ const TimelineItem = ({ data }) => {
         </span>
         {/* <time className={`${styles['timeline__item-time']}`}>{data.date}</time> */}
         <p>{data.text}</p>
-        {data.link && (
-          <a href={data.link.url} target="_blank" rel="noopener noreferrer">
-            {data.link.text}
-          </a>
-        )}
+        {data.link && <span onClick={() => alert('Open Details')}>Vedi dettagli</span>}
         <span className={`${styles['timeline__item-circle']}`}></span>
       </div>
     </div>
