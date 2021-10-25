@@ -99,12 +99,10 @@
     position: relative;
     bottom: 0;
     right: 0;
-    padding: 0.5rem;
   }
 
   .header__button-text {
     display: inline-block;
-    padding: 0 5px;
   }
 
   .header__toggle-menu {

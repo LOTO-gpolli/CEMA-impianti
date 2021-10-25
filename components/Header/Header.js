@@ -57,7 +57,7 @@ const Header = () => {
             icon: {
               name: faPhone,
             },
-            customClass: `${styles['header__button']}`,
+            customClass: `${styles['header__button']['button']}`,
             customClassText: `${styles['header__button-text']}`,
           }}
         />

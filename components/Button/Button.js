@@ -14,6 +14,7 @@ const Button = ({
     },
     type: 'button',
     customClass: '',
+    customClassText: '',
   },
 }) => {
   const { handleClick, href, icon, type, customClass, customClassText } = settings;
