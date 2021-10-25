@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <footer className={`${styles['footer']}`}>
         <div className={`${styles['footer__company-info']}`}>
-          <p className={styles['footer__company-name']}>CEMA Impianti</p>
+          <p className={styles['footer__company-name']}>CE.MA Impianti</p>
           <p className={styles['footer__company-owners']}>
             di Cera Gabriele, Marin Emilio e Figini Mario
           </p>
@@ -19,11 +19,7 @@ const Footer = () => {
             SEDE OPERATIVA: Via dell'Artigianato n.98 - 22070 Fenegrò (CO)
           </p>
           <p className={styles['footer__company-fiscal-code']}>P.IVA 03089740132</p>
-        </div>
-
-        <div className={`${styles['footer__company-social']}`}>
           <p>
-            Contattaci sui social{' '}
             <FontAwesomeIcon
               icon={faFacebook}
               size="2x"
@@ -35,8 +31,6 @@ const Footer = () => {
               className={`${styles['footer__social-icon']}`}
             />
           </p>
-        </div>
-        <div className={`${styles['footer__privacy-cookie']}`}>
           <p>
             <a>Privacy Policy</a>
             <a> | Cookie Policy</a>

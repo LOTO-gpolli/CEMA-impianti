@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import Button from '../Button/Button';
 
 const Hero = () => {
   /*-- Parallax Effect --*/
@@ -69,17 +70,19 @@ const Hero = () => {
           //  variants={childVariants}
           className={`${styles['hero__subtitle']}`}
         >
-          Impianti elettrici civili e industriali
+          Realizziamo i tuoi impianti elettrici civili e industriali
         </motion.h2>
-        <motion.button
-          // variants={childVariants}
-          className={`${styles['hero__button']}`}
-          type="button"
-        >
-          <a href="#servizi">
-            <FontAwesomeIcon icon={faArrowDown} size="lg" /> Scopri di più
-          </a>
-        </motion.button>
+        <Button
+          text="Scopri di più"
+          link="true"
+          settings={{
+            href: '#servizi',
+            icon: {
+              name: faArrowDown,
+            },
+            customClass: `${styles['hero__button']}`,
+          }}
+        />
       </motion.div>
     </div>
   );

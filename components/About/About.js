@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from '../About/About.module.css';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import Team from '../Team/Team';
 
 const About = () => {
   return (
@@ -62,6 +63,7 @@ const About = () => {
             <li>Lorem Ipsum</li>
           </ul>
         </div>
+        <Team />
       </section>
     </>
   );

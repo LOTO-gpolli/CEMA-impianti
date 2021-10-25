@@ -29,13 +29,51 @@
   padding: 0 1rem;
   cursor: pointer;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  position: relative;
 }
 
-.header__navigation-item:hover {
+.header__navigation-item--is-active {
+  padding: 0 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+.header__navigation-item--is-active::after {
+  content: '';
+  display: block;
+  width: 70%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.header__navigation-item::after {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.header__navigation-item:hover::after {
+  width: 70%;
+  transition: all 0.5s ease-in-out;
+}
+
+.header__navigation-item:current {
   color: red;
-  /* transform: scale(1.1);
-  transition: 0.3s ease-in-out; */
 }
 
 .header__button {
@@ -99,6 +137,7 @@
     position: relative;
     bottom: 0;
     right: 0;
+    padding: calc(0.75rem - 1px) calc(2rem - 1px);
   }
 
   .header__button-text {

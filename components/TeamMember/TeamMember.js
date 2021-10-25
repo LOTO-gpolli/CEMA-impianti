@@ -14,7 +14,6 @@ const TeamMember = ({
 
   return (
     <>
-      {/* <Fade bottom> */}
       <div className={`${styles['team-member__container']}`}>
         <div className={styles['team-member__content']}>
           <div className={`${styles['team-member__image-container']}`}>
@@ -27,13 +26,10 @@ const TeamMember = ({
               layout={'responsive'}
             />
           </div>
-          {/* <Fade cascade> */}
           <h3 className={styles['team-member__title']}>{title}</h3>
           <p className={styles['team-member__subtitle']}>{text}</p>
-          {/* </Fade> */}
         </div>
       </div>
-      {/* </Fade> */}
     </>
   );
 };

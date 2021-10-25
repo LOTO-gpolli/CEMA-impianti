@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
@@ -24,7 +24,6 @@ const Header = () => {
       <header className={`${styles['header']}`}>
         <div>
           <a href="#">
-            {/* <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1> */}
             <Image
               className={`${styles['header__logo']}`}
               src="/images/logo small.png"
@@ -42,9 +41,6 @@ const Header = () => {
               <a href="#about">chi siamo</a>
             </li>
             <li className={`${styles['header__navigation-item']}`}>
-              <a href="#team">team</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
               <a href="#contatti">contatti</a>
             </li>
           </ul>
@@ -57,7 +53,7 @@ const Header = () => {
             icon: {
               name: faPhone,
             },
-            customClass: `${styles['header__button']['button']}`,
+            customClass: `${styles['header__button']}`,
             customClassText: `${styles['header__button-text']}`,
           }}
         />
@@ -84,16 +80,6 @@ const Header = () => {
             <a href="#about" onClick={() => setIsOpen(false)}>
               {' '}
               Chi Siamo
-            </a>
-          </div>
-        </li>
-
-        <li className={`${styles['mobile__navigation-item']}`}>
-          <div>
-            <FontAwesomeIcon icon={faImages} />
-            <a href="#gallery" onClick={() => setIsOpen(false)}>
-              {' '}
-              Gallery
             </a>
           </div>
         </li>

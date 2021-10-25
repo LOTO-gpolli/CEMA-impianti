@@ -1,9 +1,7 @@
 .team__container {
-  text-align: center;
   padding-top: 4em;
   padding-bottom: 3em;
   font-size: 1.25rem;
-  background-color: #fff;
   color: #303030;
 }
 
@@ -21,10 +19,9 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   column-gap: 20px;
   row-gap: 4rem;
-  justify-content: center;
 }
 
-@media (max-width: 972px) {
+@media (max-width: 1200px) {
   .team-members__container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     column-gap: 30px;

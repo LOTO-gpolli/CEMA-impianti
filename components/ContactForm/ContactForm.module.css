@@ -1,3 +1,9 @@
+.contact-form__container {
+  padding-top: 4rem;
+  padding-bottom: 3em;
+  background-color: #fff;
+}
+
 .contact-form {
   max-width: 1024px;
   padding: 2rem 5%;

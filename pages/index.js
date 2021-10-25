@@ -16,7 +16,6 @@ export default function Home() {
       <Hero />
       <CardsList />
       <About />
-      <Team />
       <Timeline />
       <ContactForm />
       <Footer />

@@ -48,7 +48,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section>
+    <section id="contatti" className={`${styles['contact-form__container']}`}>
       <SectionHeading title="Contattaci" />
       <form
         className={`${styles['contact-form']}`}

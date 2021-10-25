@@ -1,11 +1,10 @@
 .footer {
   margin-top: 2rem;
   display: flex;
-  flex-wrap: wrap;
   color: #ccc;
   padding: 3rem;
   background-color: #303030;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .footer p {
@@ -31,6 +30,6 @@
 }
 
 .footer__social-icon {
-  margin-left: 1rem;
   cursor: pointer;
+  margin-right: 1rem;
 }
