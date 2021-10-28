@@ -7,7 +7,6 @@ const About = () => {
   return (
     <>
       <section id="about" className={`${styles['about__container']}`}>
-        {/* <h2 className={`${styles['about__title']}`}>CHI SIAMO</h2> */}
         <SectionHeading title="chi siamo" />
 
         <div className={`${styles['about__grid-container']}`}>
@@ -63,7 +62,6 @@ const About = () => {
             <li>Lorem Ipsum</li>
           </ul>
         </div>
-        <Team />
       </section>
     </>
   );

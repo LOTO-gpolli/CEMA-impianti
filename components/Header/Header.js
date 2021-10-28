@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';

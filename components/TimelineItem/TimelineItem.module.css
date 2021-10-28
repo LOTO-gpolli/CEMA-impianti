@@ -24,7 +24,7 @@
   align-items: flex-end;
   text-align: right;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
 }
 
 .timeline__item:nth-child(odd) .timeline__item-content {

@@ -8,6 +8,7 @@ import Timeline from '../components/Timeline/Timeline';
 import ContactForm from '../components/ContactForm/ContactForm';
 import Footer from '../components/Footer/Footer';
 import Copyright from '../components/Copyright/Copyright';
+import EmblaCarousel from '../components/EmblaCarousel/EmblaCarousel';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <CardsList />
       <About />
+      <EmblaCarousel />
       <Timeline />
       <ContactForm />
       <Footer />
