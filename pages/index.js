@@ -6,7 +6,6 @@ import Team from '../components/Team/Team';
 import Timeline from '../components/Timeline/Timeline';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
-import Copyright from '../components/Copyright/Copyright';
 import Services from '../components/Services/Services';
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <Timeline />
       <Contact />
       <Footer />
-      <Copyright />
     </>
   );
 }
