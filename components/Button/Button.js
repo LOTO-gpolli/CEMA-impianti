@@ -13,10 +13,10 @@ const Button = ({
       position: '',
     },
     type: 'button',
-    customClass: '',
+    parentClass: '',
   },
 }) => {
-  const { handleClick, href, icon, type, customClass, customClassText } = settings;
+  const { handleClick, href, icon, type, parentClass } = settings;
 
   const renderContent = (text, icon = {}) => {
     const { name: iconName, position: iconPosition = 'left' } = icon;
@@ -29,7 +29,7 @@ const Button = ({
         />
       );
       const content = (
-        <span className={`${styles['button__text']} ${customClassText}`}>{text}</span>
+        <span className={`${styles['button__text']}`}>{text}</span>
       );
 
       switch (iconPosition) {
@@ -55,16 +55,20 @@ const Button = ({
 
   if (link) {
     return (
-      <a className={`${styles['button']} ${customClass}`} href={href}>
-        {renderContent(text, icon)}
-      </a>
+      <div className={parentClass}>
+        <a className={`${styles['button']}`} href={href}>
+          {renderContent(text, icon)}
+        </a>
+      </div>
     );
   }
 
   return (
-    <button className={`${styles['button']} ${customClass}`} type={type} onClick={handleClick}>
-      {renderContent(text, icon)}
-    </button>
+    <div className={parentClass}>
+      <button className={`${styles['button']}`} type={type} onClick={handleClick}>
+        {renderContent(text, icon)}
+      </button>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image'
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
@@ -43,8 +44,13 @@ const Header = () => {
   return (
     <>
       <header className={`${styles['header']}`}>
-        <a href="#">
-          <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1>
+        <a href="#" className={`${styles['header__logo']}`}>
+          <Image
+            src="/images/logo_small.png"
+            alt="logo"
+            width={75}
+            height={75}
+          />
         </a>
         <nav className={`${styles['header__navigation']}`}>
           <ul className={`${styles['header__navigation-list']}`}>
@@ -63,8 +69,7 @@ const Header = () => {
             icon: {
               name: faPhone,
             },
-            // customClass: `${styles['header__button']}`,
-            // customClassText: `${styles['header__button-text']}`,
+            parentClass: styles['header__button'],
           }}
         />
         <div className={`${styles['header__toggle-menu']}`}>
