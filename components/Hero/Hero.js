@@ -61,9 +61,10 @@ const Hero = () => {
         <motion.h1 variants={childVariants} className={`${styles['hero__title']}`}>
           CE.MA Impianti
         </motion.h1>
-        <motion.h2 variants={childVariants} className={`${styles['hero__subtitle']}`}>
-          Impianti elettrici civili e industriali
-        </motion.h2>
+        <h2 className={`${styles['hero__subtitle']}`}>
+          I migliori professionisti per il tuo
+        </h2>
+        <p className={`${styles['hero__dynamic-product']}`}></p>
         {/* <Fade up delay={800}> */}
         <motion.button
           variants={childVariants}
