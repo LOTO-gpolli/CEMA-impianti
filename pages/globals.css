@@ -16,9 +16,13 @@ body {
 header,
 section,
 footer {
-  /* Max width va solo sul contenuto, non sul contenitore */
-  max-width: 1024px;
   padding: 0 4.5rem;
+}
+
+header > *,
+section > *,
+footer > * {
+  max-width: 1024px;
 }
 
 section {
