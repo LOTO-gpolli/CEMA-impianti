@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import StoryLine from '../StoryLine/StoryLine';
+import TeamMembers from '../TeamMembers/TeamMembers';
 // Styles
 import styles from '../About/About.module.css';
 // import Fade from 'react-reveal';
@@ -22,6 +23,7 @@ const About = () => {
         imageSource="/images/mare.jpg"
         reverse
       />
+      <TeamMembers />
     </section>
   );
 

@@ -1,5 +1,8 @@
+/* Components */
 import TeamMember from '../TeamMember/TeamMember';
+/* Styles */
 import styles from '../Team/Team.module.css';
+
 const Team = () => {
   return (
     <div id="team" className={`${styles['team__container']}`}>

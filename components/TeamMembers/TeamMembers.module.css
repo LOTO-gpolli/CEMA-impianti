@@ -1,0 +1,48 @@
+.team-members__title {
+  padding: 1rem 0 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.team-members__cards-carousel {
+  overflow: hidden;
+}
+
+.team-members__cards-container {
+  display: flex;
+}
+
+.team-members__card {
+  flex: 0 0 28%;
+  margin: 0 1rem;
+}
+
+.team-members__card:first-child {
+  margin: 0 1rem 0 0;
+}
+.team-members__card:last-child {
+  margin: 0 0 0 1rem;
+}
+
+.team-members__progress {
+  position: relative;
+  background-color: #dbdbdb;
+  margin-top: 1.5rem;
+  max-width: 270px;
+  width: calc(100% - 40px);
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-members__progress-bar {
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+}
