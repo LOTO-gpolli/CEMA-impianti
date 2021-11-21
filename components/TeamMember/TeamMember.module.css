@@ -19,7 +19,7 @@
 .team-member__title {
   margin: 1rem auto;
   font-weight: bold;
-  /* border-left: 0.35rem solid red;
+  /* border-left: 0.35rem solid var(--primary-red);
   padding-left: 0.5rem; */
 }
 
@@ -29,7 +29,7 @@
   width: 50px;
   height: 3px;
   border-radius: 2px;
-  background-color: red;
+  background-color: var(--primary-red);
   margin: 10px auto;
   transition: all 1s ease-in-out;
 }

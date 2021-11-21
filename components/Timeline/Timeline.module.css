@@ -7,7 +7,7 @@
 
 .timeline__title {
   display: inline;
-  border-left: 0.5rem solid red;
+  border-left: 0.5rem solid var(--primary-red);
   padding-left: 0.5rem;
   font-size: 2rem;
 }
@@ -20,7 +20,7 @@
 }
 
 .timeline__container::after {
-  background-color: red;
+  background-color: var(--primary-red);
   content: '';
   position: absolute;
   left: calc(50% - 2px);

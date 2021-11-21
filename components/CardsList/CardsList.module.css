@@ -11,7 +11,7 @@
 
 .cards-list__title {
   display: inline;
-  border-left: 0.5rem solid red;
+  border-left: 0.5rem solid var(--primary-red);
   padding-left: 0.5rem;
 }
 
