@@ -2,7 +2,6 @@
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
-import Team from '../components/Team/Team';
 import Timeline from '../components/Timeline/Timeline';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
-      <Team />
       <Timeline />
       <Contact />
       <Footer />

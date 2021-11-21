@@ -64,7 +64,8 @@ const Card = ({
   return (
     <>
       {/* <Fade bottom> */}
-      <motion.div
+      {/* <motion.div */}
+      <div
         ref={ref}
         initial="hidden"
         animate="visible"
@@ -83,7 +84,7 @@ const Card = ({
           <p className={styles['card__subtitle']}>{text}</p>
         </motion.div>
         {/* </Fade> */}
-      </motion.div>
+      </div>
       {/* </Fade> */}
     </>
   );
