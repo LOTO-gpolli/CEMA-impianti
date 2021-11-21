@@ -4,7 +4,7 @@ import TimelineItem from '../TimelineItem/TimelineItem';
 
 const Timeline = () => {
   return (
-    timelineData.length > 0 && (
+    timelineData?.length > 0 && (
       <>
         <div className={`${styles['timeline-section__container']}`}>
           <h2 className={`${styles['timeline__title']}`}>IL NOSTRO METODO</h2>

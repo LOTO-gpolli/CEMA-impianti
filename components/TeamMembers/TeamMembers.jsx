@@ -36,7 +36,7 @@ const TeamMembers = () => {
     },
   ];
 
-  const progressStartingPercentage = 3 / teamMembers.length;
+  const progressStartingPercentage = teamMembers?.length ? 3 / teamMembers.length : 1;
 
   const onScroll = useCallback(() => {
     if (!embla) return;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 /* Components */
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
@@ -8,13 +9,21 @@ import Footer from '../components/Footer/Footer';
 import Services from '../components/Services/Services';
 
 export default function Home() {
+  const [ showGallery, setShowGallery ] = useState(false)
+
+  useEffect(() => {
+    if (document?.location?.search?.includes('showGallery=true')) {
+      setShowGallery(true);
+    }
+  })
+
   return (
     <>
       <Header />
       <Hero />
       <Services />
       <About />
-      <Timeline />
+      {showGallery && <Timeline />}
       <Contact />
       <Footer />
     </>

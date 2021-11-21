@@ -26,7 +26,8 @@
 
 .storyline__image {
   max-width: 47%;
-  border-radius: 30px;
+  /* border-radius: 30px; */
+  border-radius: 0.5rem;
 }
 
 .storyline--reverse .storyline__image {
