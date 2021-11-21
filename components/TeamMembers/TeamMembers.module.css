@@ -1,11 +1,5 @@
-.team-members__title {
-  padding: 1rem 0 1.5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .team-members__cards-carousel {
+  padding-top: 0.75rem;
   overflow: hidden;
 }
 
@@ -28,7 +22,7 @@
 .team-members__progress {
   position: relative;
   background-color: #dbdbdb;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   max-width: 270px;
   width: calc(100% - 40px);
   height: 4px;

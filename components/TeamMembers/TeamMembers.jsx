@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 /* Components */
+import SectionHeading from '/components/SectionHeading/SectionHeading'
 import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx'
 /* Styles */
 import styles from './TeamMembers.module.css'
@@ -53,7 +54,10 @@ const TeamMembers = () => {
   
   return (
     <div className={`${styles['team-members']}`}>
-      <h3 className={`${styles['team-members__title']}`}>Il nostro team</h3>
+      <SectionHeading
+        title='Il nostro team'
+        isSubsectionTitle
+      />
       <div className={`${styles['team-members__cards-carousel']}`} ref={viewportRef}>
         <div className={`${styles['team-members__cards-container']}`}>
           { teamMembers.map(member => (

@@ -14,6 +14,10 @@
   text-transform: uppercase;
 }
 
+.section-heading__title--subsection {
+  font-size: 1.5rem;
+}
+
 .section-heading__title::after {
   content: '';
   position: absolute;
