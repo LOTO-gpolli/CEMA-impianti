@@ -131,6 +131,7 @@
     text-transform: uppercase;
     list-style-type: none;
     font-weight: bold;
+    padding-left: 7rem;
   }
 
   .header__button {
