@@ -5,7 +5,7 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 
 const Timeline = () => {
   return (
-    timelineData.length > 0 && (
+    timelineData?.length > 0 && (
       <>
         <section className={`${styles['timeline-section__container']}`}>
           {/* <h2 className={`${styles['timeline__title']}`}>IL NOSTRO METODO</h2> */}

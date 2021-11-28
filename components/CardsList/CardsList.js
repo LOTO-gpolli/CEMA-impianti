@@ -5,42 +5,35 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import Box from '../Box/Box';
 
 const CardsList = () => {
+  const cards = [
+    {
+      icon: faIndustry,
+      title: 'Impianti civili e industriali',
+      text: 'Dalla semplice manutenzione alla realizzazione di impianti completamente nuovi tradizionali o domotici.',
+    },
+    {
+      icon: faBell,
+      title: 'Installazione Allarmi',
+      text: `Impianti d'allarme certificabili IMQ. Impianti di videosorveglianza con registrazione e riproduzione live in remoto su telefono.`,
+    },
+    {
+      icon: faVideo,
+      title: 'Videocitofonia',
+      text: 'Installazione da nuovo – sostituzione – manutenzione impianti audio/video o solo audio.',
+    },
+    {
+      icon: faLaptopHouse,
+      title: 'Automazione',
+      text: `Servizi per automazione di cancelli / serrande / tapparelle / porte.`,
+    },
+  ];
+
   return (
-    <section id="servizi" className={`${styles['cards-list__container']}`}>
-      {/* <h2 className={`${styles['cards-list__title']}`}>I NOSTRI SERVIZI</h2> */}
-      <SectionHeading title="I NOSTRI SERVIZI" />
-      <div className={`${styles['cards__container']}`}>
-        <Card
-          settings={{
-            icon: faIndustry,
-            title: 'Impianti civili e industriali',
-            text: 'Dalla semplice manutenzione alla realizzazione di impianti completamente nuovi tradizionali o domotici.',
-          }}
-        />
-        <Card
-          settings={{
-            icon: faBell,
-            title: 'Installazione Allarmi',
-            text: ` Impianti d’allarme certificabili IMQ. Impianti di videosorveglianza con registrazione e riproduzione live in remoto su telefono.`,
-          }}
-        />
-        <Card
-          settings={{
-            icon: faVideo,
-            title: 'Videocitofonia',
-            text: ' Installazione da nuovo – sostituzione – manutenzione impianti audio/video o solo audio.',
-          }}
-        />
-        <Card
-          settings={{
-            icon: faLaptopHouse,
-            title: 'Automazione',
-            text: `Servizi per automazione di cancelli / serrande / tapparelle / porte.`,
-          }}
-        />
+      <div className={`${styles['cards-list']}`}>
+        {/* <Zoom> */}
+        {cards && cards.map(card => (<Card settings={card} />))}
+        {/* </Zoom> */}
       </div>
-      <Box />
-    </section>
   );
 };
 

@@ -12,7 +12,7 @@
 .rectangle {
   position: absolute;
   height: 3px;
-  background: red;
+  background: var(--primary-red);
   border-radius: 2px;
   transition: transform 0.65s;
 }

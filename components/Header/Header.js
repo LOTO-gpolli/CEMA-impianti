@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image'
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
@@ -19,34 +20,47 @@ import Image from 'next/image';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigationItems = [
+    {
+      target: 'services',
+      text: 'Servizi',
+    },
+    {
+      target: 'about',
+      text: 'Chi siamo',
+    },
+    {
+      target: 'team',
+      text: 'Team',
+    },
+    // {
+    //   target: 'works',
+    //   text: 'I nostri lavori',
+    // },
+    {
+      target: 'contacts',
+      text: 'Contatti',
+    },
+  ];
+
   return (
     <>
       <header className={`${styles['header']}`}>
-        <div>
-          <a href="#">
-            {/* <h1 className={`${styles['header__title']}`}>CE.MA IMPIANTI</h1> */}
-            <Image
-              className={`${styles['header__logo']}`}
-              src="/images/logo small.png"
-              width={70}
-              height={70}
-            />
-          </a>
-        </div>
+        <a href="#" className={`${styles['header__logo']}`}>
+          <Image
+            src="/images/logo_small.png"
+            alt="logo"
+            width={75}
+            height={75}
+          />
+        </a>
         <nav className={`${styles['header__navigation']}`}>
           <ul className={`${styles['header__navigation-list']}`}>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#servizi">servizi</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#about">chi siamo</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#team">team</a>
-            </li>
-            <li className={`${styles['header__navigation-item']}`}>
-              <a href="#contatti">contatti</a>
-            </li>
+            { navigationItems && navigationItems.map(item => (
+              <li className={`${styles['header__navigation-item']}`}>
+                <a href={`#${item.target}`}>{item.text}</a>
+              </li>
+            )) }
           </ul>
         </nav>
         <Button
@@ -57,8 +71,7 @@ const Header = () => {
             icon: {
               name: faPhone,
             },
-            customClass: `${styles['header__button']}`,
-            customClassText: `${styles['header__button-text']}`,
+            parentClass: styles['header__button'],
           }}
         />
         <div className={`${styles['header__toggle-menu']}`}>

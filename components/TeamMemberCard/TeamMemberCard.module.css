@@ -1,0 +1,55 @@
+.team-member-card {
+  width: 25%;
+  min-height: calc(2rem + 100px + 1.5rem + 35px + 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.team-member-card__background {
+  width: 100%;
+  height: calc(100px / 2 + 2rem);
+  position: absolute;
+  top: 0;
+  background-color: #aaa;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.team-member-card__img-thumbnail {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.team-member-card__body {
+  width: 100%;
+  height: calc(50px + 1.5rem + 35px + 2rem);
+  position: absolute;
+  padding: calc(50px + 1rem) 1rem 1rem;
+  top: calc(100px / 2 + 2rem);
+  background-color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.team-member-card__name {
+  font-size: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.team-member-card__role {
+  color: #303030;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

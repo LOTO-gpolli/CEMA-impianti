@@ -1,15 +1,17 @@
-.cards-list__container {
+.cards-list {
   text-align: center;
-  padding-top: 4em;
-  padding-bottom: 3em;
+  padding: 2rem 0;
   background-color: #fff;
   color: #303030;
   font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cards-list__title {
   display: inline;
-  border-left: 0.5rem solid red;
+  border-left: 0.5rem solid var(--primary-red);
   padding-left: 0.5rem;
 }
 

@@ -1,7 +1,5 @@
 .button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: inline-block;
   padding: calc(0.75rem - 1px) calc(2rem - 1px);
   background-color: #E20613;
   color: #fff !important;

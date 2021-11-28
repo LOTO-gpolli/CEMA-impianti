@@ -13,16 +13,53 @@
 }
 
 .hero__heading {
+  width: 800px;
   text-align: center;
   margin: auto 30px;
 }
 
 .hero__title {
   margin-bottom: 1rem;
+  font-size: 4rem;
+  text-transform: uppercase;
 }
 
 .hero__subtitle {
+  margin-bottom: 0.25rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.hero__dynamic-product:before {
+  content: '';
   margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 4px solid var(--primary-red);
+  border-radius: 0.1rem;
+  animation: switchProduct infinite 12s;
+}
+
+@keyframes switchProduct {
+  0% {
+    content: "Allarme";
+  }
+  20% {
+    content: "Impianto di casa";
+  }
+  40% {
+    content: "Videocitofono";
+  }
+  60% {
+    content: "Cancello";
+  }
+  80% {
+    content: "Impianto industriale";
+  }
+  100% {
+    content: "Allarme";
+  }
 }
 
 .hero__button {

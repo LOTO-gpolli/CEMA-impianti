@@ -1,6 +1,8 @@
+/* Components */
 import TeamMember from '../TeamMember/TeamMember';
+/* Styles */
 import styles from '../Team/Team.module.css';
-import SectionHeading from '../SectionHeading/SectionHeading';
+
 const Team = () => {
   return (
     <section id="team" className={`${styles['team__container']}`}>

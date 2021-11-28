@@ -36,7 +36,7 @@ const Select = (props) => {
         <span className={`${styles['select__text']} ${ isPlaceholder ? `${styles['select__text--is-placeholder']}` : '' }`}>{selectedItem} { required && isPlaceholder ? '*' : '' }</span>
         <FontAwesomeIcon icon={ isVisible ? faChevronUp : faChevronDown } />
       </button>
-      { optionsList.length ? 
+      { optionsList?.length ? 
         <div className={`${styles['select__menu']} ${ isVisible ? `${styles['select__menu--is-visible']}` : ''}`}>
           <ul className={`${styles['select__list']}`}>
             {optionsList.map(option => <li className={`${styles['select__list-item']}`} onClick={() => selectItem(capitalizeFirstLetter(option))}>{capitalizeFirstLetter(option)}</li>)}

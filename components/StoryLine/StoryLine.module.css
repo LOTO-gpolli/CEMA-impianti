@@ -1,0 +1,35 @@
+.storyline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.storyline__text-wrapper {
+  width: 47%;
+  line-height: 1.5rem;
+}
+
+.storyline--reverse .storyline__text-wrapper {
+  order: 2;
+}
+
+.storyline__title {
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.storyline__description {
+  color: #303030;
+}
+
+.storyline__image {
+  max-width: 47%;
+  /* border-radius: 30px; */
+  border-radius: 0.5rem;
+}
+
+.storyline--reverse .storyline__image {
+  order: 1;
+}

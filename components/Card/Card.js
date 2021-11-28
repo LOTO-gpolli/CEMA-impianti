@@ -66,11 +66,13 @@ const Card = ({
 
   return (
     <>
-      <motion.div
-        // ref={ref}
-        // initial="hidden"
-        // animate="visible"
-        // variants={containerVariants}
+      {/* <Fade bottom> */}
+      {/* <motion.div */}
+      <div
+        ref={ref}
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
         className={`${styles['card__container']}`}
       >
         <motion.div
@@ -89,7 +91,9 @@ const Card = ({
 
           <p className={styles['card__subtitle']}>{text}</p>
         </motion.div>
-      </motion.div>
+        {/* </Fade> */}
+      </div>
+      {/* </Fade> */}
     </>
   );
 };
