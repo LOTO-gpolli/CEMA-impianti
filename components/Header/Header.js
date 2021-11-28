@@ -15,8 +15,6 @@ import {
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Image from 'next/image';
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 

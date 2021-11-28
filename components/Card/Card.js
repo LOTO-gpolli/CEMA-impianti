@@ -69,10 +69,10 @@ const Card = ({
       {/* <Fade bottom> */}
       {/* <motion.div */}
       <div
-        ref={ref}
+        // ref={ref}
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
+        // variants={containerVariants}
         className={`${styles['card__container']}`}
       >
         <motion.div

@@ -4,7 +4,6 @@ import StoryLine from '../StoryLine/StoryLine';
 import TeamMembers from '../TeamMembers/TeamMembers';
 // Styles
 import styles from '../About/About.module.css';
-import SectionHeading from '../SectionHeading/SectionHeading';
 
 const About = () => {
   return (
