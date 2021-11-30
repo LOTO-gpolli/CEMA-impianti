@@ -29,8 +29,8 @@ const CardsList = () => {
   ];
 
   return (
-    <div className={`${styles['cards__container']}`}>
-      {cards && cards.map((card, index) => <Card settings={card} key={index} />)}
+    <div className={`${styles['cards-list']}`}>
+      {cards && cards.map((card) => <Card settings={card} />)}
     </div>
   );
 };

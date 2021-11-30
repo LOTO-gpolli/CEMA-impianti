@@ -1,7 +1,8 @@
 .card__container {
-  height: 350px;
-  width: 23.5%;
-  max-width: 295px;
+  margin: 0 auto;
+  height: 300px;
+  /* width: 23.5%; */
+  max-width: 260px;
   text-align: center;
   border-radius: 0.5rem;
   border-bottom: 0.35rem solid var(--primary-red);
@@ -27,7 +28,7 @@
 .card__icon {
   color: white;
   margin-bottom: 2rem;
-  transform: scale(0.75)
+  transform: scale(0.75);
 }
 
 .card__title {
@@ -78,4 +79,10 @@
 .card__subtitle {
   color: #303030;
   margin-top: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .card__container {
+    width: 360px;
+  }
 }

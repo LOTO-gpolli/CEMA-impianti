@@ -9,23 +9,23 @@ import Footer from '../components/Footer/Footer';
 import Services from '../components/Services/Services';
 
 export default function Home() {
-  const [ showGallery, setShowGallery ] = useState(false)
+  const [showGallery, setShowGallery] = useState(false);
 
   useEffect(() => {
     if (document?.location?.search?.includes('showGallery=true')) {
       setShowGallery(true);
     }
-  })
+  });
 
   return (
     <>
       <Header />
       <Hero />
       <Services />
-      <About />
+      {/* <About />
       {showGallery && <Timeline />}
-      <Contact />
-      <Footer />
+      <Contact /> */}
+      {/* <Footer /> */}
     </>
   );
 }

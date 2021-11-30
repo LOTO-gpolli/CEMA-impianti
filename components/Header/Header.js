@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
@@ -44,80 +44,48 @@ const Header = () => {
   return (
     <>
       <header className={`${styles['header']}`}>
-        <a href="#" className={`${styles['header__logo']}`}>
-          <Image
-            src="/images/logo_small.png"
-            alt="logo"
-            width={75}
-            height={75}
+        <div className={`${styles['header__container']}`}>
+          <a href="#" className={`${styles['header__logo']}`}>
+            <Image src="/images/logo.png" alt="logo" width={128} height={64} eager="true" />
+          </a>
+          <nav className={`${styles['header__navigation']}`}>
+            <ul className={`${styles['header__navigation-list']}`}>
+              {navigationItems &&
+                navigationItems.map((item) => (
+                  <li className={`${styles['header__navigation-item']}`}>
+                    <a href={`#${item.target}`}>{item.text}</a>
+                  </li>
+                ))}
+            </ul>
+          </nav>
+          <Button
+            text="3391122333"
+            link="true"
+            settings={{
+              href: 'tel:3391122333',
+              icon: {
+                name: faPhone,
+              },
+              customClass: `${styles['header__button']}`,
+              customClassText: `${styles['header__button-text']}`,
+            }}
           />
-        </a>
-        <nav className={`${styles['header__navigation']}`}>
-          <ul className={`${styles['header__navigation-list']}`}>
-            { navigationItems && navigationItems.map(item => (
-              <li className={`${styles['header__navigation-item']}`}>
-                <a href={`#${item.target}`}>{item.text}</a>
-              </li>
-            )) }
-          </ul>
-        </nav>
-        <Button
-          text="3391122333"
-          link="true"
-          settings={{
-            href: 'tel:3391122333',
-            icon: {
-              name: faPhone,
-            },
-            parentClass: styles['header__button'],
-          }}
-        />
-        <div className={`${styles['header__toggle-menu']}`}>
-          <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+          <div className={`${styles['header__toggle-menu']}`}>
+            <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
         </div>
       </header>
       <ul
         className={`${styles['mobile-menu']} ${isOpen ? `${styles['mobile-menu--is-open']}` : ''} `}
       >
-        <li className={`${styles['mobile__navigation-item']}`}>
-          <div>
-            <FontAwesomeIcon icon={faBriefcase} />
-            <a href="#servizi" onClick={() => setIsOpen(false)}>
-              {' '}
-              Servizi
-            </a>
-          </div>
-        </li>
-
-        <li className={`${styles['mobile__navigation-item']}`}>
-          <div>
-            <FontAwesomeIcon icon={faUserFriends} />
-            <a href="#about" onClick={() => setIsOpen(false)}>
-              {' '}
-              Chi Siamo
-            </a>
-          </div>
-        </li>
-
-        <li className={`${styles['mobile__navigation-item']}`}>
-          <div>
-            <FontAwesomeIcon icon={faImages} />
-            <a href="#gallery" onClick={() => setIsOpen(false)}>
-              {' '}
-              Gallery
-            </a>
-          </div>
-        </li>
-
-        <li className={`${styles['mobile__navigation-item']}`}>
-          <div>
-            <FontAwesomeIcon icon={faEnvelopeOpenText} />
-            <a href="#contatti" onClick={() => setIsOpen(false)}>
-              {' '}
-              Contatti
-            </a>
-          </div>
-        </li>
+        {navigationItems &&
+          navigationItems.map((item) => (
+            <li className={`${styles['mobile__navigation-item']}`}>
+              <a href={`#${item.target}`} onClick={() => setIsOpen(false)}>
+                {item.text}
+              </a>
+            </li>
+          ))}
       </ul>
     </>
   );
