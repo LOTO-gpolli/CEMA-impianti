@@ -12,6 +12,12 @@
   margin: 0 1rem;
 }
 
+@media (max-width: 575px) {
+  .team-members__card {
+    flex: 0 0 61%;
+  }
+}
+
 .team-members__card:first-child {
   margin: 0 1rem 0 0;
 }
