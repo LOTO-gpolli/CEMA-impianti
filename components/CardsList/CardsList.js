@@ -29,9 +29,9 @@ const CardsList = () => {
   ];
 
   return (
-    <div className={`${styles['cards__container']}`}>
+    <section className={`${styles['cards__container']}`}>
       {cards && cards.map((card, index) => <Card settings={card} key={index} />)}
-    </div>
+    </section>
   );
 };
 
