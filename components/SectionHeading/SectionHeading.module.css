@@ -13,6 +13,7 @@
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .section-heading__title--subsection {
