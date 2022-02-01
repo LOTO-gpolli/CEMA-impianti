@@ -55,7 +55,7 @@ const Gallery = () => {
   }, [embla, onScroll]);
 
   return (
-    <section>
+    <section id="projects">
       <SectionHeading
         title="I nostri progetti"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius tempor lorem sed congue."
