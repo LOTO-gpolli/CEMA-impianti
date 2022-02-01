@@ -14,7 +14,7 @@ const TeamMembers = () => {
     containScroll: "trimSnaps",
   })
   const [scrollProgress, setScrollProgress] = useState(0);
-  const isDesktop = useMediaQuery('(min-width: 576px)')
+  const isDesktop = useMediaQuery('(min-width: 576px)');
 
   const teamMembers = [
     {
