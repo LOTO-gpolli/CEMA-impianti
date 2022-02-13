@@ -1,5 +1,4 @@
 .footer {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -13,8 +12,15 @@
 
 .footer__row {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 575px) {
+  .footer__row {
+    flex-direction: column;
+  }
 }
 
 .footer__socials {
@@ -25,6 +31,12 @@
 
 .footer__social-icon {
   margin: 0 0.5rem;
+}
+
+@media (max-width: 575px) {
+  .footer__social-icon {
+    margin-top: 1rem;
+  }
 }
 
 .footer__social-icon:first-child {
@@ -43,6 +55,12 @@
   font-weight: bold;
   text-align: center;
   border-radius: 30px;
+}
+
+@media (max-width: 575px) {
+  .footer__other-info {
+    width: 100%;
+  }
 }
 
 .footer__separator {

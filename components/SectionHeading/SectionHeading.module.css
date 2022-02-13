@@ -1,6 +1,6 @@
 .section-heading {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   padding: 0.75rem 0;
@@ -13,6 +13,7 @@
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .section-heading__title--subsection {

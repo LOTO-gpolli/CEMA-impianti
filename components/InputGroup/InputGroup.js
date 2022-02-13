@@ -23,7 +23,7 @@ const InputGroup = (props) => {
   }
   if (type) {
     return (
-      <div className={`${styles['input-group']} ${size !== 'medium' ? styles[`input-group--${size}`] : ''} ${theme !== 'light' ? styles[`input-group--${theme}-theme`] : ''}`}>
+      <div className={`${styles['input-group']} ${size ? styles[`input-group--${size}`] : ''} ${theme !== 'light' ? styles[`input-group--${theme}-theme`] : ''}`}>
         { label && <label className={`${styles['input-group__label']} ${styles['input-group__label--is-visible']}`} htmlFor={id}>{label} {required ? '*': ''}</label> }
         { renderField(type) }
         { error.message && <div className={`${styles['input-group__error-message']}`}>{ error.message ? (<><FontAwesomeIcon icon={faExclamationCircle} /><span> {error.message}</span></>) : '' }</div> }

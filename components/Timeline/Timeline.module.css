@@ -1,27 +1,5 @@
-.timeline-section__container {
-  background-color: #fff;
-  text-align: center;
-}
-
-.timeline__title {
-  display: inline;
-  border-left: 0.5rem solid var(--primary-red);
-  padding-left: 0.5rem;
-  font-size: 2rem;
-}
-
-.timeline__container {
+.timeline {
   display: flex;
   flex-direction: column;
-  margin: 40px 0;
-  position: relative;
-}
-
-.timeline__container::after {
-  background-color: var(--primary-red);
-  content: '';
-  position: absolute;
-  left: calc(50% - 2px);
-  width: 4px;
-  height: 100%;
+  align-items: flex-start;
 }

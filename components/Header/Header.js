@@ -28,13 +28,9 @@ const Header = () => {
       text: 'Chi siamo',
     },
     {
-      target: 'team',
-      text: 'Team',
+      target: 'projects',
+      text: 'Progetti',
     },
-    // {
-    //   target: 'works',
-    //   text: 'I nostri lavori',
-    // },
     {
       target: 'contacts',
       text: 'Contatti',
