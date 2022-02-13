@@ -1,20 +1,17 @@
-import { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback, useEffect, useState } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 /* Components */
-import SectionHeading from '/components/SectionHeading/SectionHeading';
-import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx';
-/* Hooks */
-import useMediaQuery from '/hooks/useMediaQuery';
+import SectionHeading from '/components/SectionHeading/SectionHeading'
+import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx'
 /* Styles */
-import styles from './TeamMembers.module.css';
+import styles from './TeamMembers.module.css'
 
 const TeamMembers = () => {
   const [viewportRef, embla] = useEmblaCarousel({
-    align: 'start',
-    containScroll: 'trimSnaps',
-  });
+    align: "start",
+    containScroll: "trimSnaps",
+  })
   const [scrollProgress, setScrollProgress] = useState(0);
-  const isDesktop = useMediaQuery('(min-width: 576px)');
 
   const teamMembers = [
     {
@@ -39,8 +36,7 @@ const TeamMembers = () => {
     },
   ];
 
-  const cardShown = isDesktop ? 3 : 1;
-  const progressStartingPercentage = teamMembers?.length ? cardShown / teamMembers.length : 1;
+  const progressStartingPercentage = teamMembers?.length ? 3 / teamMembers.length : 1;
 
   const onScroll = useCallback(() => {
     if (!embla) return;
@@ -53,22 +49,25 @@ const TeamMembers = () => {
     if (!embla) return;
 
     onScroll();
-    embla.on('scroll', onScroll);
+    embla.on("scroll", onScroll);
   }, [embla, onScroll]);
-
+  
   return (
     <div className={`${styles['team-members']}`}>
-      <SectionHeading title="Il nostro team" isSubsectionTitle />
+      <SectionHeading
+        title='Il nostro team'
+        isSubsectionTitle
+      />
       <div className={`${styles['team-members__cards-carousel']}`} ref={viewportRef}>
         <div className={`${styles['team-members__cards-container']}`}>
-          {teamMembers.map((member) => (
+          { teamMembers.map(member => (
             <TeamMemberCard
               image={member.image}
               name={member.name}
               parentClass={styles['team-members__card']}
               role={member.role}
             />
-          ))}
+          )) }
         </div>
         <div className={`${styles['team-members__progress']}`}>
           <div
@@ -79,6 +78,6 @@ const TeamMembers = () => {
       </div>
     </div>
   );
-};
+}
 
 export default TeamMembers;

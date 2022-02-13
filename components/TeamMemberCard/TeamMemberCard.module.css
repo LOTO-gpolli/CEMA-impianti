@@ -10,12 +10,6 @@
   border-radius: 0.5rem;
 }
 
-@media (max-width: 575px) {
-  .team-member-card {
-    width: 61%;
-  }
-}
-
 .team-member-card__background {
   width: 100%;
   height: calc(100px / 2 + 2rem);
