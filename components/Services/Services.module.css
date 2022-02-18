@@ -1,7 +1,9 @@
 .services {
+  margin: 0 auto;
+  padding: 0 5%;
   text-align: center;
-  padding-top: 4em;
-  padding-bottom: 3em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #fff;
   color: #303030;
   font-size: 1.25rem;

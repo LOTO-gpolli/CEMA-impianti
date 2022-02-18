@@ -2,7 +2,6 @@
   margin: 0 auto;
   height: 300px;
   /* width: 23.5%; */
-  max-width: 350px;
   text-align: center;
   border-radius: 0.5rem;
   border-bottom: 0.35rem solid var(--primary-red);
