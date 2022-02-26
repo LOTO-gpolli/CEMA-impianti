@@ -1,5 +1,4 @@
 .cards__container {
-  margin: 3rem auto;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 2rem;
