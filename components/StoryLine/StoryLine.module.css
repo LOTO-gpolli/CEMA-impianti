@@ -1,5 +1,6 @@
 .storyline {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
@@ -13,8 +14,9 @@
 }
 
 .storyline__text-wrapper {
-  width: 47%;
+  width: 100%;
   line-height: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 575px) {
@@ -24,7 +26,7 @@
 }
 
 .storyline--reverse .storyline__text-wrapper {
-  order: 2;
+  order: 1;
 }
 
 @media (max-width: 575px) {
@@ -56,7 +58,7 @@
 }
 
 .storyline__image {
-  max-width: 47%;
+  max-width: 100%;
   /* border-radius: 30px; */
   border-radius: 0.5rem;
 }
@@ -70,4 +72,22 @@
 
 .storyline--reverse .storyline__image {
   order: 1;
+}
+
+@media screen and (min-width: 767px) {
+  .storyline {
+    flex-direction: row;
+  }
+  .storyline__text-wrapper {
+    width: 47%;
+    line-height: 1.5rem;
+  }
+
+  .storyline__image {
+    max-width: 47%;
+  }
+
+  .storyline--reverse .storyline__text-wrapper {
+    order: 2;
+  }
 }
