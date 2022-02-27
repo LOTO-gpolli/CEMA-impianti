@@ -31,7 +31,13 @@ const Select = (props) => {
   
   return (
     <div className={`${styles['select']}`} ref={selectWrapper}>
-      <input className={`${styles['select__hidden-value']}`} type="text" value={ isPlaceholder ? '' : selectedItem } {...validation}></input>
+      <input 
+        className={`${styles['select__hidden-value']}`}
+        readOnly
+        type="text"
+        value={ isPlaceholder ? '' : selectedItem }
+        {...validation}
+      />
       <button className={`${styles['select__button']} ${ parentClass ? `${parentClass}` : '' }`} type="button" onClick={() => toggleVisibility()} >
         <span className={`${styles['select__text']} ${ isPlaceholder ? `${styles['select__text--is-placeholder']}` : '' }`}>{selectedItem} { required && isPlaceholder ? '*' : '' }</span>
         <FontAwesomeIcon icon={ isVisible ? faChevronUp : faChevronDown } />

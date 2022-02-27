@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { v4 as uuid } from 'uuid';
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
@@ -48,7 +49,7 @@ const Header = () => {
             <ul className={`${styles['header__navigation-list']}`}>
               {navigationItems &&
                 navigationItems.map((item) => (
-                  <li className={`${styles['header__navigation-item']}`}>
+                  <li className={`${styles['header__navigation-item']}`} key={uuid()}>
                     <a href={`#${item.target}`}>{item.text}</a>
                   </li>
                 ))}
@@ -76,7 +77,7 @@ const Header = () => {
       >
         {navigationItems &&
           navigationItems.map((item) => (
-            <li className={`${styles['mobile__navigation-item']}`}>
+            <li className={`${styles['mobile__navigation-item']}`} key={uuid()}>
               <a href={`#${item.target}`} onClick={() => setIsOpen(false)}>
                 {item.text}
               </a>

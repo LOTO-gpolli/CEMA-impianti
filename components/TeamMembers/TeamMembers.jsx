@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { v4 as uuid } from 'uuid';
 /* Components */
 import SectionHeading from '/components/SectionHeading/SectionHeading'
 import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx'
@@ -67,6 +68,7 @@ const TeamMembers = () => {
           { teamMembers.map(member => (
             <TeamMemberCard
               image={member.image}
+              key={uuid()}
               name={member.name}
               parentClass={styles['team-members__card']}
               role={member.role}
