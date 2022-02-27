@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react'
+import { v4 as uuid } from 'uuid';
 
 import SectionHeading from '../SectionHeading/SectionHeading';
 import Timeline from '../Timeline/Timeline';
@@ -68,7 +69,7 @@ const Gallery = () => {
       <div className={`${styles['gallery__item-carousel']}`} ref={viewportRef}>
         <div className={`${styles['gallery__item-container']}`}>
           { galleryList.map(item => (
-            <div className={`${styles['gallery__image-container']}`}>
+            <div className={`${styles['gallery__image-container']}`} key={uuid()}>
               <Image
                 alt={item.alt}
                 className={`${styles['gallery__image']}`}
