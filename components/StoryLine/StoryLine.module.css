@@ -65,6 +65,7 @@
 @media (max-width: 766px) {
   .storyline__image-wrapper {
     width: 100%;
+    margin: 1rem auto;
   }
 }
 
