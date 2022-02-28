@@ -57,8 +57,19 @@
   }
 }
 
+.storyline__image-wrapper {
+  display: block;
+  width: 50%;
+}
+
+@media (max-width: 766px) {
+  .storyline__image-wrapper {
+    width: 100%;
+  }
+}
+
 .storyline__image {
-  max-width: 100%;
+  /* max-width: 100%; */
   /* border-radius: 30px; */
   border-radius: 0.5rem;
 }
