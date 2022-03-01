@@ -18,8 +18,6 @@ const StoryLine = ({ description, imageSource, title = '', reverse = false }) =>
           layout="responsive"
         />
       </div>
-
-      {/* <img className={styles['storyline__image']} src={imageSource} /> */}
     </div>
   );
 };
