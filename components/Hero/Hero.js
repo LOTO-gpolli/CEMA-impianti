@@ -65,9 +65,7 @@ const Hero = () => {
         >
           CE.MA Impianti
         </motion.h1>
-        <h2 className={`${styles['hero__subtitle']}`}>
-          I migliori professionisti per il tuo
-        </h2>
+        <h2 className={`${styles['hero__subtitle']}`}>I migliori professionisti per il tuo</h2>
         <p className={`${styles['hero__dynamic-product']}`}></p>
         {/* <Fade up delay={800}> */}
         <motion.button
@@ -75,7 +73,7 @@ const Hero = () => {
           className={`${styles['hero__button']}`}
           type="button"
         >
-          <a href="#servizi">
+          <a href="#services">
             <FontAwesomeIcon icon={faArrowDown} size="lg" /> Scopri di più
           </a>
         </motion.button>

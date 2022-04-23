@@ -4,9 +4,7 @@ import Image from 'next/image'
 /* Styles */
 import styles from './TeamMemberCard.module.css'
 
-const TeamMemberCard = ({ image, name, role, parentClass = '' }) => {
-  console.log('image: ', image, typeof image)
-  
+const TeamMemberCard = ({ image, name, role, parentClass = '' }) => {  
   return (
     <div className={`${ parentClass } ${styles['team-member-card']}`}>
       <div className={`${styles['team-member-card__background']}`} />
@@ -20,8 +18,8 @@ const TeamMemberCard = ({ image, name, role, parentClass = '' }) => {
         />
       </div>
       <div className={`${styles['team-member-card__body']}`}>
-      <h5 className={`${styles['team-member-card__name']}`}>{name}</h5>
-      <p className={`${styles['team-member-card__role']}`}>{role}</p>
+        <h5 className={`${styles['team-member-card__name']}`}>{name}</h5>
+        <p className={`${styles['team-member-card__role']}`}>{role}</p>
       </div>
     </div>
   );

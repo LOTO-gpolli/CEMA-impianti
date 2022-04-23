@@ -29,11 +29,9 @@ const CardsList = () => {
   ];
 
   return (
-      <div className={`${styles['cards-list']}`}>
-        {/* <Zoom> */}
-        {cards && cards.map(card => (<Card settings={card} />))}
-        {/* </Zoom> */}
-      </div>
+    <section className={`${styles['cards__container']}`}>
+      {cards && cards.map((card, index) => <Card settings={card} key={index} />)}
+    </section>
   );
 };
 

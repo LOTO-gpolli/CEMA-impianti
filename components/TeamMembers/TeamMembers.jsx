@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { v4 as uuid } from 'uuid';
 /* Components */
 import SectionHeading from '/components/SectionHeading/SectionHeading'
 import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx'
+/* Hooks */
+import useMediaQuery from '/hooks/useMediaQuery'
 /* Styles */
 import styles from './TeamMembers.module.css'
 
@@ -12,6 +15,7 @@ const TeamMembers = () => {
     containScroll: "trimSnaps",
   })
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isDesktop = useMediaQuery('(min-width: 576px)');
 
   const teamMembers = [
     {
@@ -36,7 +40,8 @@ const TeamMembers = () => {
     },
   ];
 
-  const progressStartingPercentage = teamMembers?.length ? 3 / teamMembers.length : 1;
+  const cardShown = isDesktop ? 3 : 1;
+  const progressStartingPercentage = teamMembers?.length ? cardShown / teamMembers.length : 1;
 
   const onScroll = useCallback(() => {
     if (!embla) return;
@@ -63,6 +68,7 @@ const TeamMembers = () => {
           { teamMembers.map(member => (
             <TeamMemberCard
               image={member.image}
+              key={uuid()}
               name={member.name}
               parentClass={styles['team-members__card']}
               role={member.role}
