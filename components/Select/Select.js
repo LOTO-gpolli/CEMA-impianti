@@ -45,7 +45,7 @@ const Select = (props) => {
       { optionsList?.length ? 
         <div className={`${styles['select__menu']} ${ isVisible ? `${styles['select__menu--is-visible']}` : ''}`}>
           <ul className={`${styles['select__list']}`}>
-            {optionsList.map(option => <li className={`${styles['select__list-item']}`} onClick={() => selectItem(capitalizeFirstLetter(option))}>{capitalizeFirstLetter(option)}</li>)}
+            {optionsList.map(item => <li className={`${styles['select__list-item']}`} onClick={() => selectItem(capitalizeFirstLetter(item.option))} key={item.id}>{capitalizeFirstLetter(item.option)}</li>)}
           </ul>
         </div> :
         null

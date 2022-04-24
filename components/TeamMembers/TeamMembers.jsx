@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { v4 as uuid } from 'uuid';
 /* Components */
 import SectionHeading from '/components/SectionHeading/SectionHeading'
 import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard'

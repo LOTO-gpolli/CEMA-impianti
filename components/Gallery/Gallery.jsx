@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react'
-import { v4 as uuid } from 'uuid';
 
 import SectionHeading from '../SectionHeading/SectionHeading';
 import Timeline from '../Timeline/Timeline';
@@ -51,7 +50,7 @@ const Gallery = ({ title, subtitle, gallery, timeline }) => {
       { gallery && <div className={`${styles['gallery__item-carousel']}`} ref={viewportRef}>
         <div className={`${styles['gallery__item-container']}`}>
           { galleryImages.map(image => (
-            <div className={`${styles['gallery__image-container']}`} key={uuid()}>
+            <div className={`${styles['gallery__image-container']}`} key={image.id}>
               <img className={`${styles['gallery__image']}`} src={image.url} alt="" />
             </div>
           ))}
@@ -74,6 +73,7 @@ Gallery.propTypes = {
   gallery: PropTypes.shape({
     title: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
       url: PropTypes.string
     })).isRequired
   }),

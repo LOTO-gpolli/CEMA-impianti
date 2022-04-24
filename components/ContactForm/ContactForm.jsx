@@ -1,5 +1,7 @@
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
+import { v4 as uuid } from 'uuid';
 /* Components */
 import InputGroup from '../InputGroup/InputGroup';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -8,9 +10,15 @@ import Checkbox from '../Checkbox/Checkbox';
 import Button from '../Button/Button';
 /* Styles */
 import styles from './ContactForm.module.css';
-import SectionHeading from '../SectionHeading/SectionHeading';
 
 const ContactForm = ({ subjectOptions, privacy }) => {
+  const subjects = useMemo(() => {
+    return subjectOptions.map((option) => ({
+      id: uuid(),
+      option,
+    }))
+  }, [subjectOptions])
+
   const {
     clearErrors,
     handleSubmit: validateOnSubmit,
@@ -118,7 +126,7 @@ const ContactForm = ({ subjectOptions, privacy }) => {
         error={errors['oggetto']}
         label="Oggetto"
         id="oggetto"
-        optionsList={subjectOptions}
+        optionsList={subjects}
         placeholder="Seleziona l'oggetto della richiesta"
         required={true}
         type="select"

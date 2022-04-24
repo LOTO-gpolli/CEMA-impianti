@@ -61,6 +61,7 @@ export const GET_PROJECTS_DATA = gql`
   query GetProjectsData {
     projects_section(where: { id: "cl2c2ntsk8elm0aun925itntc" }) {
       gallery_image {
+        id
         url
       }
       gallery_title
