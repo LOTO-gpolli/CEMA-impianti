@@ -17,6 +17,7 @@ export const GET_SERVICES_DATA = gql`
       subtitle
       services_cards {
         icon {
+          id
           url
         }
         description
@@ -36,19 +37,21 @@ export const GET_ABOUT_US_DATA = gql`
       title
       subtitle
       storyline {
-        title
         description
+        id
         image {
-          id
+          url
         }
+        title
       }
       gallery_title
       team_cards {
+        id
+        image {
+          url
+        }
         name
         role
-        image {
-          id
-        }
       }
     }
   }

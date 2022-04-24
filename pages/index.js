@@ -47,8 +47,6 @@ export default function Home({
   contactUsData,
   footerData
 }) {
-  console.log('servicesData:', servicesData)
-  console.log('aboutUsData:', aboutUsData)
   console.log('projectsData:', projectsData)
   console.log('contactUsData:', contactUsData)
   console.log('footerData:', footerData)
@@ -68,7 +66,14 @@ export default function Home({
         services={servicesData.services_cards}
         imqCertification={servicesData.imq_certification}
       />
-      <About data={aboutUsData} />
+      <About
+        title={aboutUsData.title}
+        subtitle={aboutUsData.subtitle}
+        storyline={aboutUsData.storyline}
+        team={{
+          title: aboutUsData.gallery_title,
+          members: aboutUsData.team_cards
+        }}/>
       <Gallery data={projectsData} />
       <Contact data={contactUsData} />
       <Footer data={footerData} />

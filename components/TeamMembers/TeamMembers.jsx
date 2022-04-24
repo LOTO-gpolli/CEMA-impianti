@@ -1,15 +1,17 @@
+import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { v4 as uuid } from 'uuid';
 /* Components */
 import SectionHeading from '/components/SectionHeading/SectionHeading'
-import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard.jsx'
+import TeamMemberCard from '/components/TeamMemberCard/TeamMemberCard'
 /* Hooks */
 import useMediaQuery from '/hooks/useMediaQuery'
 /* Styles */
 import styles from './TeamMembers.module.css'
 
-const TeamMembers = () => {
+const TeamMembers = ({ content }) => {
+  const { title, members } = content
   const [viewportRef, embla] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
@@ -17,31 +19,8 @@ const TeamMembers = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const isDesktop = useMediaQuery('(min-width: 576px)');
 
-  const teamMembers = [
-    {
-      image: '/images/placeholder_man.jpg',
-      name: 'Tizio',
-      role: 'Elettricista',
-    },
-    {
-      image: '/images/placeholder_man.jpg',
-      name: 'Caio',
-      role: 'Elettricista',
-    },
-    {
-      image: '/images/placeholder_man.jpg',
-      name: 'Sempronio',
-      role: 'Elettricista',
-    },
-    {
-      image: '/images/placeholder_man.jpg',
-      name: 'Tiberio',
-      role: 'Elettricista',
-    },
-  ];
-
   const cardShown = isDesktop ? 3 : 1;
-  const progressStartingPercentage = teamMembers?.length ? cardShown / teamMembers.length : 1;
+  const progressStartingPercentage = members?.length ? cardShown / members.length : 1;
 
   const onScroll = useCallback(() => {
     if (!embla) return;
@@ -60,15 +39,15 @@ const TeamMembers = () => {
   return (
     <div className={`${styles['team-members']}`}>
       <SectionHeading
-        title='Il nostro team'
+        title={title}
         isSubsectionTitle
       />
       <div className={`${styles['team-members__cards-carousel']}`} ref={viewportRef}>
         <div className={`${styles['team-members__cards-container']}`}>
-          { teamMembers.map(member => (
+          { members.map(member => (
             <TeamMemberCard
-              image={member.image}
-              key={uuid()}
+              image={member.image.url}
+              key={member.id}
               name={member.name}
               parentClass={styles['team-members__card']}
               role={member.role}
@@ -84,6 +63,20 @@ const TeamMembers = () => {
       </div>
     </div>
   );
+}
+
+TeamMembers.propTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    members: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      image: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+      name: PropTypes.string,
+      role: PropTypes.string,
+    }).isRequired)
+  })
 }
 
 export default TeamMembers;
