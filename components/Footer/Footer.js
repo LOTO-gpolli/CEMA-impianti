@@ -1,15 +1,17 @@
+import PropTypes from 'prop-types';
+/* Styles */
 import styles from './Footer.module.css';
 /* FontAwesome */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the FontAwesomeIcon component
 import { faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
-const Footer = () => {
+const Footer = ({ legalDiscaimer }) => {
   return (
     <>
       <footer className={`${styles['footer']}`}>
         <div className={`${styles['footer__row']}`}>
           <div className={`${styles['footer__other-info']}`}>
-            <p>CEMA Impianti di Cera Gabriele, Marin Emilio e Figini Mario. Sede legale: Via Monte Generoso n.94 - 22070 Fenegrò (CO) | Sede operativa: Via dell'Artigianato n.98 - 22070 Fenegrò (CO). P.IVA 03089740132</p>            {/* <p>P.IVA 03089740132</p> */}
+            <p>{ legalDiscaimer }</p>            {/* <p>P.IVA 03089740132</p> */}
           </div>
           <div className={`${styles['footer__socials']}`}>
             <FontAwesomeIcon
@@ -43,5 +45,9 @@ const Footer = () => {
     </>
   );
 };
+
+Footer.propTypes = {
+  legalDiscaimer: PropTypes.string.isRequired
+}
 
 export default Footer;

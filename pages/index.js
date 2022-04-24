@@ -49,7 +49,6 @@ export default function Home({
 }) {
   console.log('projectsData:', projectsData)
   console.log('contactUsData:', contactUsData)
-  console.log('footerData:', footerData)
 
   return (
     <>
@@ -76,7 +75,7 @@ export default function Home({
         }}/>
       <Gallery data={projectsData} />
       <Contact data={contactUsData} />
-      <Footer data={footerData} />
+      <Footer legalDiscaimer={footerData.legal_disclaimer} />
     </>
   );
 }
