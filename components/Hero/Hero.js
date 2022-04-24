@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './Hero.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -25,4 +26,11 @@ const Hero = ({ title, subtitle, services }) => {
     </div>
   );
 };
+
+Hero.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  services: PropTypes.arrayOf(PropTypes.string)
+}
+
 export default Hero;
