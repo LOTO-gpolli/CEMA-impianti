@@ -3,9 +3,9 @@ import { gql } from '@apollo/client'
 export const GET_HERO_DATA = gql`
 query GetHeroData {
   hero_section(where: {id: "cl2bqd6qx2uz90bunzlzgd46j"}) {
-    title
-    subtitle
     services
+    subtitle
+    title
   }
 }
 `
@@ -13,8 +13,10 @@ query GetHeroData {
 export const GET_SERVICES_DATA = gql`
   query GetServicesData {
     services_section(where: { id: "cl2bqwf4p2nbv0buo3u2em6y1" }) {
-      title
-      subtitle
+      imq_certification {
+        description
+        title
+      }
       services_cards {
         icon {
           id
@@ -23,10 +25,8 @@ export const GET_SERVICES_DATA = gql`
         description
         title
       }
-      imq_certification {
-        description
-        title
-      }
+      subtitle
+      title
     }
   }
 `
@@ -34,8 +34,7 @@ export const GET_SERVICES_DATA = gql`
 export const GET_ABOUT_US_DATA = gql`
   query GetAboutUsData {
     about_us_section(where: { id: "cl2c2jiyp8d270aunsbdiikn1" }) {
-      title
-      subtitle
+      gallery_title
       storyline {
         description
         id
@@ -44,7 +43,7 @@ export const GET_ABOUT_US_DATA = gql`
         }
         title
       }
-      gallery_title
+      subtitle
       team_cards {
         id
         image {
@@ -53,6 +52,7 @@ export const GET_ABOUT_US_DATA = gql`
         name
         role
       }
+      title
     }
   }
 `
@@ -60,19 +60,20 @@ export const GET_ABOUT_US_DATA = gql`
 export const GET_PROJECTS_DATA = gql`
   query GetProjectsData {
     projects_section(where: { id: "cl2c2ntsk8elm0aun925itntc" }) {
-      title
-      subtitle
-      project_flow {
-        title
-        description
-        image {
-          id
-        }
+      gallery_image {
+        url
       }
       gallery_title
-      immagine {
+      project_flow {
+        description
         id
+        image {
+          url
+        }
+        title
       }
+      subtitle
+      title
     }
   }
 `
@@ -80,10 +81,10 @@ export const GET_PROJECTS_DATA = gql`
 export const GET_CONTACT_US_DATA = gql`
   query GetContactUsData {
     contact_us_section(where: { id: "cl2c2ro8a7sep0bunqzogg53n" }) {
-      title
-      subtitle
       mail_subject
       privacy_text
+      subtitle
+      title
     }
   }
 `

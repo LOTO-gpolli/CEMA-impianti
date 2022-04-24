@@ -1,5 +1,5 @@
+import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react'
 import { v4 as uuid } from 'uuid';
 
@@ -10,7 +10,8 @@ import useMediaQuery from '/hooks/useMediaQuery'
 /* Styles */
 import styles from './Gallery.module.css'
 
-const Gallery = () => {
+const Gallery = ({ title, subtitle, gallery, timeline }) => {
+  const { title: galleryTitle, images: galleryImages } = gallery
   const [viewportRef, embla] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
@@ -19,27 +20,8 @@ const Gallery = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const isDesktop = useMediaQuery('(min-width: 576px)');
 
-  const galleryList = [
-    {
-      image: '/images/Hero-image-sm.jpg',
-      alt: 'Placeholder',
-    },
-    {
-      image: '/images/Hero-image-sm.jpg',
-      alt: 'Placeholder',
-    },
-    {
-      image: '/images/Hero-image-sm.jpg',
-      alt: 'Placeholder',
-    },
-    {
-      image: '/images/Hero-image-sm.jpg',
-      alt: 'Placeholder',
-    },
-  ];
-
   const imagesShown = isDesktop ? 2 : 1;
-  const progressStartingPercentage = galleryList?.length ? imagesShown / galleryList.length : 1;
+  const progressStartingPercentage = galleryImages?.length ? imagesShown / galleryImages.length : 1;
 
   const onScroll = useCallback(() => {
     if (!embla) return;
@@ -58,25 +40,19 @@ const Gallery = () => {
   return (
     <section id="projects">
       <SectionHeading
-        title="I nostri progetti"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius tempor lorem sed congue."
+        title={title}
+        subtitle={subtitle}
       />
-      <Timeline />
-      <SectionHeading
-        title='Galleria'
+      <Timeline content={timeline} />
+      { gallery && <SectionHeading
+        title={galleryTitle}
         isSubsectionTitle
-      />
-      <div className={`${styles['gallery__item-carousel']}`} ref={viewportRef}>
+      />}
+      { gallery && <div className={`${styles['gallery__item-carousel']}`} ref={viewportRef}>
         <div className={`${styles['gallery__item-container']}`}>
-          { galleryList.map(item => (
+          { galleryImages.map(image => (
             <div className={`${styles['gallery__image-container']}`} key={uuid()}>
-              <Image
-                alt={item.alt}
-                className={`${styles['gallery__image']}`}
-                layout="fill"
-                src={item.image}
-                objectFit="cover"
-              />
+              <img className={`${styles['gallery__image']}`} src={image.url} alt="" />
             </div>
           ))}
         </div>
@@ -87,8 +63,28 @@ const Gallery = () => {
           />
         </div>
       </div>
+      }
     </section>
   );
+}
+
+Gallery.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  gallery: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.shape({
+      url: PropTypes.string
+    })).isRequired
+  }),
+  timeline: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+      url: PropTypes.string
+    }).isRequired
+  }).isRequired)
 }
 
 export default Gallery

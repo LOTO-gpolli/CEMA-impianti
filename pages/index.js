@@ -46,8 +46,6 @@ export default function Home({
   contactUsData,
   footerData
 }) {
-  console.log('projectsData:', projectsData)
-
   return (
     <>
       <Header />
@@ -71,7 +69,15 @@ export default function Home({
           title: aboutUsData.gallery_title,
           members: aboutUsData.team_cards
         }}/>
-      <Gallery data={projectsData} />
+      <Gallery
+        gallery={{
+          title: projectsData.gallery_title,
+          images: projectsData.gallery_image
+        }}
+        subtitle={projectsData.subtitle}
+        timeline={projectsData.project_flow}
+        title={projectsData.title}
+      />
       <Contact
         privacy={contactUsData.privacy_text}
         subjectOptions={contactUsData.mail_subject}
