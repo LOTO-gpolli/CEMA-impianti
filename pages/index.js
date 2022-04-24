@@ -1,4 +1,3 @@
-import client from '../apolloClient'
 import {
   GET_HERO_DATA,
   GET_SERVICES_DATA, 
@@ -48,7 +47,6 @@ export default function Home({
   footerData
 }) {
   console.log('projectsData:', projectsData)
-  console.log('contactUsData:', contactUsData)
 
   return (
     <>
@@ -74,7 +72,12 @@ export default function Home({
           members: aboutUsData.team_cards
         }}/>
       <Gallery data={projectsData} />
-      <Contact data={contactUsData} />
+      <Contact
+        privacy={contactUsData.privacy_text}
+        subjectOptions={contactUsData.mail_subject}
+        subtitle={contactUsData.subtitle}
+        title={contactUsData.title}
+      />
       <Footer legalDiscaimer={footerData.legal_disclaimer} />
     </>
   );

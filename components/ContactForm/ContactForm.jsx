@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 /* Components */
 import InputGroup from '../InputGroup/InputGroup';
@@ -9,7 +10,7 @@ import Button from '../Button/Button';
 import styles from './ContactForm.module.css';
 import SectionHeading from '../SectionHeading/SectionHeading';
 
-const ContactForm = () => {
+const ContactForm = ({ subjectOptions, privacy }) => {
   const {
     clearErrors,
     handleSubmit: validateOnSubmit,
@@ -117,7 +118,7 @@ const ContactForm = () => {
         error={errors['oggetto']}
         label="Oggetto"
         id="oggetto"
-        optionsList={['opzione 1', 'opzione 2', 'opzione 3', 'opzione 4', 'opzione 5']}
+        optionsList={subjectOptions}
         placeholder="Seleziona l'oggetto della richiesta"
         required={true}
         type="select"
@@ -144,7 +145,7 @@ const ContactForm = () => {
       <CheckboxGroup>
         <Checkbox
           error={errors['privacy']}
-          label="Dichiaro di aver letto e di accettare il testo della Informativa sulla Privacy *"
+          label={privacy}
           name="privacy"
           value={true}
           validation={{
@@ -175,5 +176,10 @@ const ContactForm = () => {
     </form>
   );
 };
+
+ContactForm.propTypes = {
+  privacy: PropTypes.string.isRequired,
+  subjectOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+}
 
 export default ContactForm;
