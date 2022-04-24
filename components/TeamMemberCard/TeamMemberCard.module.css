@@ -36,6 +36,11 @@
   z-index: 1;
 }
 
+.team-member-card__img {
+  width: 100px;
+  height: 100px;
+}
+
 .team-member-card__body {
   width: 100%;
   height: calc(50px + 1.5rem + 35px + 2rem);
