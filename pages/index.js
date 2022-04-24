@@ -62,7 +62,12 @@ export default function Home({
         subtitle={heroData.subtitle}
         services={heroData.services}
       />
-      <Services data={servicesData} />
+      <Services
+        title={servicesData.title}
+        subtitle={servicesData.subtitle}
+        services={servicesData.services_cards}
+        imqCertification={servicesData.imq_certification}
+      />
       <About data={aboutUsData} />
       <Gallery data={projectsData} />
       <Contact data={contactUsData} />

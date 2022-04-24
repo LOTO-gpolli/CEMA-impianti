@@ -16,12 +16,15 @@ export const GET_SERVICES_DATA = gql`
       title
       subtitle
       services_cards {
-        title
+        icon {
+          url
+        }
         description
+        title
       }
       imq_certification {
-        title
         description
+        title
       }
     }
   }
