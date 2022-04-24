@@ -16,70 +16,57 @@ import Gallery from '../components/Gallery/Gallery';
 import Footer from '../components/Footer/Footer';
 import Services from '../components/Services/Services';
 import MobilePhoneButton from '../components/MobilePhoneButton/MobilePhoneButton';
+/* Helpers */
+import { retrieveGraphQLData } from '../helpers/utils';
 
 export const getStaticProps = async () => {
-  const { data: heroData, loading: heroLoading } = await client.query({ query: GET_HERO_DATA })
-  const { data: servicesData, loading: servicesLoading } = await client.query({ query: GET_SERVICES_DATA })
-  const { data: aboutUsData, loading: aboutUsLoading } = await client.query({ query: GET_ABOUT_US_DATA })
-  const { data: projectsData, loading: projectsLoading } = await client.query({ query: GET_PROJECTS_DATA })
-  const { data: contactUsData, loading: contactUsLoading } = await client.query({ query: GET_CONTACT_US_DATA })
-  const { data: footerData, loading: footerLoading } = await client.query({ query: GET_FOOTER_DATA })
+  const heroData = await retrieveGraphQLData(GET_HERO_DATA)
+  const servicesData = await retrieveGraphQLData(GET_SERVICES_DATA)
+  const aboutUsData = await retrieveGraphQLData(GET_ABOUT_US_DATA)
+  const projectsData = await retrieveGraphQLData(GET_PROJECTS_DATA)
+  const contactUsData = await retrieveGraphQLData(GET_CONTACT_US_DATA)
+  const footerData = await retrieveGraphQLData(GET_FOOTER_DATA)
   
   return {
     props: {
-      heroSection: {
-        data: heroData.hero_section,
-        loading: heroLoading
-      },
-      servicesSection: {
-        data: servicesData.services_section,
-        loading: servicesLoading,
-      },
-      aboutUsSection: {
-        data: aboutUsData.about_us_section,
-        loading: aboutUsLoading,
-      },
-      projectsSection: {
-        data: projectsData.projects_section,
-        loading: projectsLoading,
-      },
-      contactUsSection: {
-        data: contactUsData.contact_us_section,
-        loading: contactUsLoading,
-      },
-      footerSection: {
-        data: footerData.footer_section,
-        loading: footerLoading,
-      },
+      heroData: heroData.hero_section,
+      servicesData: servicesData.services_section,
+      aboutUsData: aboutUsData.about_us_section,
+      projectsData: projectsData.projects_section,
+      contactUsData: contactUsData.contact_us_section,
+      footerData: footerData.footer_section,
     }
   }
 }
 
 export default function Home({
-  heroSection,
-  servicesSection,
-  aboutUsSection,
-  projectsSection,
-  contactUsSection,
-  footerSection
+  heroData,
+  servicesData,
+  aboutUsData,
+  projectsData,
+  contactUsData,
+  footerData
 }) {
-  console.log('heroSection:', heroSection)
-  console.log('servicesSection:', servicesSection)
-  console.log('aboutUsSection:', aboutUsSection)
-  console.log('projectsSection:', projectsSection)
-  console.log('contactUsSection:', contactUsSection)
-  console.log('footerSection:', footerSection)
+  console.log('servicesData:', servicesData)
+  console.log('aboutUsData:', aboutUsData)
+  console.log('projectsData:', projectsData)
+  console.log('contactUsData:', contactUsData)
+  console.log('footerData:', footerData)
 
   return (
     <>
       <Header />
       <MobilePhoneButton />
-      <Hero />
-      <Services />
-      <About />
-      <Gallery />
-      <Contact />
-      <Footer />
+      <Hero
+        title={heroData.title}
+        subtitle={heroData.subtitle}
+        services={heroData.services}
+      />
+      <Services data={servicesData} />
+      <About data={aboutUsData} />
+      <Gallery data={projectsData} />
+      <Contact data={contactUsData} />
+      <Footer data={footerData} />
     </>
   );
 }

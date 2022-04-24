@@ -9,7 +9,6 @@
   background-position: 50% 50%;
   background-attachment: fixed;
   color: white;
-  /* padding: 80px 35px; */
 }
 
 .hero__heading {
@@ -30,36 +29,14 @@
   font-weight: 400;
 }
 
-.hero__dynamic-product:before {
-  content: '';
+.hero__service {
   margin-bottom: 1rem;
-  padding-bottom: 0.25rem;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 4px solid var(--primary-red);
-  border-radius: 0.1rem;
-  animation: switchProduct infinite 12s;
-}
-
-@keyframes switchProduct {
-  0% {
-    content: "Allarme";
-  }
-  20% {
-    content: "Impianto di casa";
-  }
-  40% {
-    content: "Videocitofono";
-  }
-  60% {
-    content: "Cancello";
-  }
-  80% {
-    content: "Impianto industriale";
-  }
-  100% {
-    content: "Allarme";
-  }
+  text-decoration: underline;
+  text-decoration-color: var(--primary-red);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 0.25rem;
 }
 
 .hero__button {
@@ -76,7 +53,6 @@
   border-radius: 30px;
   outline: none;
   cursor: pointer;
-  /* transition: 0.3s ease-in-out; */
 }
 
 .hero__button:active,
@@ -91,7 +67,6 @@
   display: flex;
   margin: 20px;
   border-radius: 10px;
-  /* box-shadow: 0px 0px 10px 3px #303030; */
 }
 
 .hero__image {
