@@ -8,7 +8,7 @@ import {
   GET_FOOTER_DATA,
 } from '../queries';
 /* Components */
-import Meta from '../components/Meta'
+import Meta from '../components/Meta';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
