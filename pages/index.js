@@ -1,4 +1,5 @@
 import {
+  GET_META_DATA,
   GET_HERO_DATA,
   GET_SERVICES_DATA, 
   GET_ABOUT_US_DATA,
@@ -7,6 +8,7 @@ import {
   GET_FOOTER_DATA,
 } from '../queries';
 /* Components */
+import Meta from '../components/Meta'
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
@@ -19,6 +21,7 @@ import MobilePhoneButton from '../components/MobilePhoneButton/MobilePhoneButton
 import { retrieveGraphQLData } from '../helpers/utils';
 
 export const getStaticProps = async () => {
+  const metaData = await retrieveGraphQLData(GET_META_DATA)
   const heroData = await retrieveGraphQLData(GET_HERO_DATA)
   const servicesData = await retrieveGraphQLData(GET_SERVICES_DATA)
   const aboutUsData = await retrieveGraphQLData(GET_ABOUT_US_DATA)
@@ -28,6 +31,7 @@ export const getStaticProps = async () => {
   
   return {
     props: {
+      metaData: metaData.meta,
       heroData: heroData.hero_section,
       servicesData: servicesData.services_section,
       aboutUsData: aboutUsData.about_us_section,
@@ -39,6 +43,7 @@ export const getStaticProps = async () => {
 }
 
 export default function Home({
+  metaData,
   heroData,
   servicesData,
   aboutUsData,
@@ -48,6 +53,11 @@ export default function Home({
 }) {
   return (
     <>
+      <Meta
+        title={metaData.title}
+        description={metaData.description}
+        keywords={metaData.keywords}
+      />
       <Header />
       <MobilePhoneButton />
       <Hero
