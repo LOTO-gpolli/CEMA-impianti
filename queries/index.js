@@ -1,5 +1,15 @@
 import { gql } from '@apollo/client'
 
+export const GET_META_DATA = gql`
+query GetMetaData {
+  meta(where: {id: "cl2esjbhk0h0u0bur5beoe1j6"}) {
+    title
+    description
+    keywords
+  }
+}
+`
+
 export const GET_HERO_DATA = gql`
 query GetHeroData {
   hero_section(where: {id: "cl2bqd6qx2uz90bunzlzgd46j"}) {

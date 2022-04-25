@@ -8,7 +8,7 @@ const StoryLine = ({ description, imageSource, title = '', reverse = false  }) =
         {title && <h4 className={styles['storyline__title']}>{title}</h4>}
         <p className={styles['storyline__description']}>{description}</p>
       </div>
-      <img className={styles['storyline__image']} src={imageSource} />
+      <img className={styles['storyline__image']} src={imageSource} alt="" />
     </div>
   );
 }

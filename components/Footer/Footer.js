@@ -36,9 +36,9 @@ const Footer = ({ legalDiscaimer }) => {
             </p>
           </div>
           <div className={`${styles['footer__policies']}`}>
-            <a className={`${styles['footer__policy']}`}>Privacy Policy</a>
+            <a className={`${styles['footer__policy']}`} href="#">Privacy Policy</a>
             <span>|</span>
-            <a className={`${styles['footer__policy']}`}>Cookie Policy</a>
+            <a className={`${styles['footer__policy']}`} href="#">Cookie Policy</a>
           </div>
         </div>
       </footer>
