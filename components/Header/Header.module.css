@@ -46,10 +46,16 @@
 .header__navigation-item {
   position: relative;
   padding: 0.4rem 1rem;
-  font-weight: bold;
-  text-decoration: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+}
+
+.header__navigation-button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .header__navigation-item:after {
@@ -122,9 +128,15 @@
   display: flex;
   justify-content: center;
   list-style-type: none;
-  text-transform: uppercase;
-  font-size: 2rem;
   margin-bottom: 2rem;
+}
+
+.mobile__navigation-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1024px) {
