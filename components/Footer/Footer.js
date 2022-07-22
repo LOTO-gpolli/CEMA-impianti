@@ -13,18 +13,6 @@ const Footer = ({ legalDiscaimer }) => {
           <div className={`${styles['footer__other-info']}`}>
             <p>{ legalDiscaimer }</p>            {/* <p>P.IVA 03089740132</p> */}
           </div>
-          <div className={`${styles['footer__socials']}`}>
-            <FontAwesomeIcon
-              icon={faFacebook}
-              size="2x"
-              className={`${styles['footer__social-icon']}`}
-            />
-            <FontAwesomeIcon
-              icon={faWhatsapp}
-              size="2x"
-              className={`${styles['footer__social-icon']}`}
-            />
-          </div>
         </div>
         <div className={`${styles['footer__separator']}`}></div>
         <div className={`${styles['footer__row']}`}>
