@@ -1,6 +1,6 @@
 .team-member-card {
   width: 25%;
-  min-height: calc(2rem + 100px + 1.5rem + 35px + 2rem);
+  min-height: calc(2rem + 175px + 1.5rem + 35px + 2rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +43,7 @@
 
 .team-member-card__body {
   width: 100%;
-  height: calc(50px + 1.5rem + 35px + 2rem);
+  height: calc(125px + 1.5rem + 35px + 2rem);
   position: absolute;
   padding: calc(50px + 1rem) 1rem 1rem;
   top: calc(100px / 2 + 2rem);
@@ -62,5 +62,4 @@
   color: #303030;
   font-size: 0.75rem;
   font-weight: bold;
-  text-transform: uppercase;
 }

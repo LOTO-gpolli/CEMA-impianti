@@ -105,11 +105,11 @@
 }
 
 .timeline-item__text {
-  height: 2.5rem;
   overflow: hidden;
 }
 
 .timeline-item__image-container {
+  aspect-ratio: 1 / 1;
   width: 100%;
   min-height: 275px;
   position: relative;
