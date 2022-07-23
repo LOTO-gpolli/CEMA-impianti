@@ -11,3 +11,14 @@ export const retrieveGraphQLData = async (query) => {
 
   return response.data
 } 
+
+export const scrollToSection = (elementId, offset = 70) => {
+  const element = document.getElementById(elementId);
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  })
+}

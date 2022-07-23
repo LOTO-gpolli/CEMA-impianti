@@ -66,7 +66,6 @@ export default function Home({
         keywords={metaData.keywords}
       />
       <Header />
-      <MobilePhoneButton />
       <Hero
         title={heroData.title}
         subtitle={heroData.subtitle}

@@ -4,6 +4,8 @@ import { v4 as uuid } from 'uuid';
 /* Components */
 import Button from '../Button/Button';
 import Burger from '../Burger/Burger';
+/* Helpers */
+import { scrollToSection } from '../../helpers/utils'
 /* Styles */
 import styles from './Header.module.css';
 /* FontAwesome */
@@ -18,6 +20,14 @@ import {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavLinkBehavior = (section, isMobile = false) => {
+    scrollToSection(section);
+    
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  }
 
   const navigationItems = [
     {
@@ -50,16 +60,15 @@ const Header = () => {
               {navigationItems &&
                 navigationItems.map((item) => (
                   <li className={`${styles['header__navigation-item']}`} key={uuid()}>
-                    <a href={`#${item.target}`}>{item.text}</a>
+                    <button className={`${styles['header__navigation-button']}`} onClick={() => handleNavLinkBehavior(item.target)}>{item.text}</button>
                   </li>
                 ))}
             </ul>
           </nav>
           <Button
-            text="3391122333"
-            link="true"
+            text="CONTATTACI"
             settings={{
-              href: 'tel:3391122333',
+              handleClick: () => scrollToSection('contacts'),
               icon: {
                 name: faPhone,
               },
@@ -78,9 +87,9 @@ const Header = () => {
         {navigationItems &&
           navigationItems.map((item) => (
             <li className={`${styles['mobile__navigation-item']}`} key={uuid()}>
-              <a href={`#${item.target}`} onClick={() => setIsOpen(false)}>
+              <button className={`${styles['mobile__navigation-button']}`} onClick={() => handleNavLinkBehavior(item.target, true)}>
                 {item.text}
-              </a>
+              </button>
             </li>
           ))}
       </ul>

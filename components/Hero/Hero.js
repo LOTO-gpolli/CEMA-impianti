@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 /* Components */
 import useInfiniteLoop from '../../hooks/useInfiniteLoop'
+/* Helpers */
+import { scrollToSection } from '../../helpers/utils'
 
 const Hero = ({ title, subtitle, services }) => {
   return (
@@ -17,10 +19,9 @@ const Hero = ({ title, subtitle, services }) => {
         <button
           className={`${styles['hero__button']}`}
           type="button"
+          onClick={() => scrollToSection('services')}
         >
-          <a href="#services">
             <FontAwesomeIcon icon={faArrowDown} size="lg" /> Scopri di più
-          </a>
         </button>
       </div>
     </div>
