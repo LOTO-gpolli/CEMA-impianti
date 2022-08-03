@@ -16,8 +16,8 @@ const ContactForm = ({ subjectOptions, privacy }) => {
     return subjectOptions.map((option) => ({
       id: uuid(),
       option,
-    }))
-  }, [subjectOptions])
+    }));
+  }, [subjectOptions]);
 
   const {
     clearErrors,
@@ -168,7 +168,7 @@ const ContactForm = ({ subjectOptions, privacy }) => {
       </CheckboxGroup>
       <ButtonGroup position="right">
         <Button
-          text="Submit"
+          text="Invia"
           link={false}
           settings={{
             handleClick: function () {},
@@ -188,6 +188,6 @@ const ContactForm = ({ subjectOptions, privacy }) => {
 ContactForm.propTypes = {
   privacy: PropTypes.string.isRequired,
   subjectOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
-}
+};
 
 export default ContactForm;
