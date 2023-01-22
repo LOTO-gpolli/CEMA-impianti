@@ -1,65 +1,106 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {
+  GET_META_DATA,
+  GET_HERO_DATA,
+  GET_SERVICES_DATA, 
+  GET_ABOUT_US_DATA,
+  GET_PROJECTS_DATA,
+  GET_CONTACT_US_DATA,
+  GET_FOOTER_DATA,
+} from '../queries';
+/* Components */
+import Meta from '../components/Meta';
+import Header from '../components/Header/Header';
+import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
+import Contact from '../components/Contact/Contact';
+import Gallery from '../components/Gallery/Gallery';
+import Footer from '../components/Footer/Footer';
+import Services from '../components/Services/Services';
+import MobilePhoneButton from '../components/MobilePhoneButton/MobilePhoneButton';
+/* Helpers */
+import { retrieveGraphQLData } from '../helpers/utils';
 
-export default function Home() {
+// The following import prevents a Font Awesome icon server-side rendering bug,
+// where the icons flash from a very large icon down to a properly sized one:
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
+
+export const getStaticProps = async () => {
+  const metaData = await retrieveGraphQLData(GET_META_DATA)
+  const heroData = await retrieveGraphQLData(GET_HERO_DATA)
+  const servicesData = await retrieveGraphQLData(GET_SERVICES_DATA)
+  const aboutUsData = await retrieveGraphQLData(GET_ABOUT_US_DATA)
+  const projectsData = await retrieveGraphQLData(GET_PROJECTS_DATA)
+  const contactUsData = await retrieveGraphQLData(GET_CONTACT_US_DATA)
+  const footerData = await retrieveGraphQLData(GET_FOOTER_DATA)
+  
+  return {
+    props: {
+      metaData: metaData.meta,
+      heroData: heroData.hero_section,
+      servicesData: servicesData.services_section,
+      aboutUsData: aboutUsData.about_us_section,
+      projectsData: projectsData.projects_section,
+      contactUsData: contactUsData.contact_us_section,
+      footerData: footerData.footer_section,
+    }
+  }
+}
+
+export default function Home({
+  metaData,
+  heroData,
+  servicesData,
+  aboutUsData,
+  projectsData,
+  contactUsData,
+  footerData
+}) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    <>
+      <Meta
+        title={metaData.title}
+        description={metaData.description}
+        keywords={metaData.keywords}
+      />
+      <Header />
+      <Hero
+        title={heroData.title}
+        subtitle={heroData.subtitle}
+        services={heroData.services}
+      />
+      <Services
+        title={servicesData.title}
+        subtitle={servicesData.subtitle}
+        services={servicesData.services_cards}
+        imqCertification={servicesData.imq_certification}
+      />
+      <About
+        title={aboutUsData.title}
+        subtitle={aboutUsData.subtitle}
+        storyline={aboutUsData.storyline}
+        team={{
+          title: aboutUsData.gallery_title,
+          members: aboutUsData.team_cards
+        }}/>
+      <Gallery
+        gallery={{
+          title: projectsData.gallery_title,
+          images: projectsData.gallery_image
+        }}
+        subtitle={projectsData.subtitle}
+        timeline={projectsData.project_flow}
+        title={projectsData.title}
+      />
+      <Contact
+        privacy={contactUsData.privacy_text}
+        subjectOptions={contactUsData.mail_subject}
+        subtitle={contactUsData.subtitle}
+        title={contactUsData.title}
+      />
+      <Footer legalDiscaimer={footerData.legal_disclaimer} />
+    </>
+  );
 }

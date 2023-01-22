@@ -1,0 +1,13 @@
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.75rem 0;
+}
+
+.button-group--center {
+  justify-content: center;
+}
+
+.button-group--right {
+  justify-content: flex-end;
+}

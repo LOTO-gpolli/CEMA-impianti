@@ -1,0 +1,23 @@
+.mobile-phone-button {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  right: 0;
+  padding: 1rem 1.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  .mobile-phone-button {
+    display: block;
+  }
+}
+
+.mobile-phone-button__text {
+  display: none;
+}

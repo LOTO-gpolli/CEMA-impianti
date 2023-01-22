@@ -1,0 +1,117 @@
+.card__container {
+  width: 23.5%;
+  height: 325px;
+  position: relative;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  border-bottom: 0.35rem solid var(--primary-red);
+  box-shadow: var(--box-shadow);
+  box-shadow: 0px 4px 6px 3px rgb(0, 0, 0, 0.05), 0px 0px 12px 6px rgb(0, 0, 0, 0.09);
+  z-index: 0;
+}
+
+.card__container {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .card__container {
+    width: 32%;
+  }
+}
+
+@media (max-width: 767px) {
+  .card__container {
+    width: 48%;
+  }
+}
+
+@media (max-width: 450px) {
+  .card__container {
+    width: 100%;
+    height: 275px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card__container:last-child {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.card__content {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+@media (max-width: 450px) {
+  .card__content {
+    max-height: 165px;
+    padding: 0 2.75rem;
+  }
+}
+
+.card__icon-container {
+  background: var(--primary-red);
+  clip-path: circle(80px at center 0);
+  padding-top: 1rem;
+}
+
+.card__icon {
+  width: 36px;
+  color: white;
+  margin-bottom: 2rem;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(74deg) brightness(104%) contrast(103%);
+}
+
+.card__title {
+  color: black;
+  margin: 1rem auto;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.card__title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--primary-red);
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 1s ease-in-out;
+}
+.card__title-scroll {
+  margin: 1rem auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.card__title-scroll::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--primary-red);
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 1s ease-in-out;
+}
+
+.card__subtitle {
+  color: #303030;
+  margin-top: 2rem;
+}

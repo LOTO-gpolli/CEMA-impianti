@@ -1,0 +1,7 @@
+.contact-form {
+  margin: 0 auto; 
+}
+
+.contact-form > div {
+  vertical-align: top;
+}
