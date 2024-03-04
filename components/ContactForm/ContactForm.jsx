@@ -11,7 +11,7 @@ import Button from '../Button/Button';
 /* Styles */
 import styles from './ContactForm.module.css';
 
-const ContactForm = ({ subjectOptions, privacy }) => {
+const ContactForm = ({ setModalText, subjectOptions, privacy }) => {
   const subjects = useMemo(() => {
     return subjectOptions.map((option) => ({
       id: uuid(),
@@ -44,16 +44,20 @@ const ContactForm = ({ subjectOptions, privacy }) => {
       },
       body: encodeFormData({ 'form-name': 'contact', ...data }),
     })
-      .then(() => {
-        console.log('Email sent');
-        reset();
+      .then((res) => {
+        if (res.status === 200) {
+          setModalText(`La tua richiesta è stata inviata con successo`);
+          reset();
+        } else {
+          setModalText(`Si è verificato un errore. Ti preghiamo di riprovare più tardi`);
+        }
       })
       .catch((error) => {
+        setModalText(`Si è verificato un errore. Ti preghiamo di riprovare più tardi`);
         console.warn('The email has not been sent. Error: ', error);
       });
 
     // TODO: resettare qui tutti i select
-    console.log('data: ', data);
   }
 
   return (
@@ -61,7 +65,6 @@ const ContactForm = ({ subjectOptions, privacy }) => {
       className={`${styles['contact-form']}`}
       name="contact"
       method="POST"
-      action="/"
       onSubmit={validateOnSubmit(handleSubmit)}
       data-netlify="true"
     >
@@ -186,6 +189,7 @@ const ContactForm = ({ subjectOptions, privacy }) => {
 };
 
 ContactForm.propTypes = {
+  setModalText: PropTypes.func.isRequired,
   privacy: PropTypes.string.isRequired,
   subjectOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
