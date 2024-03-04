@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.8)),
-    url(../../public/images/Hero-image.jpg);
+    url(../../public/images/electrician-hero.png);
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
